@@ -82,6 +82,11 @@ modules:
         sha256: ac9e5b605c6ec874bbc7e01c81ac31e715598f7031b0c54ec484fbcea669768a
       - type: patch
         path: no-lstdcxxfs.patch
+    post-install:
+      - "cp ${FLATPAK_DEST}/share/applications/openrct2-savegame.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}-savegame.desktop"
+      - "cp ${FLATPAK_DEST}/share/applications/openrct2-scenario.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}-scenario.desktop"
+      - "cp ${FLATPAK_DEST}/share/applications/openrct2-uri.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}-uri.desktop"
+      - "cp ${FLATPAK_DEST}/share/mime/packages/openrct2.xml ${FLATPAK_DEST}/share/mime/packages/${FLATPAK_ID}.xml"
 
 cleanup:
   - /include
