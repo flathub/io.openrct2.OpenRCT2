@@ -46,32 +46,48 @@ modules:
         url: https://github.com/xiph/speexdsp.git
         tag: SpeexDSP-1.2.0
         commit: 64cbfa9bca7479a758351aa02bb4abdd76baa9e7
+  
+  - name: Duktape
+    buildsystem: simple
+    build-commands:
+      - make -f Makefile.sharedlibrary
+      - make -f Makefile.sharedlibrary install
+    sources:
+      - type: archive
+        url: https://duktape.org/duktape-2.5.0.tar.xz
+        sha256: 83d411560a1cd36ea132bd81d8d9885efe9285c6bc6685c4b71e69a0c4329616
+      - type: patch
+        path: duktape-installdir.patch
 
   - name: OpenRCT2
     buildsystem: cmake
     builddir: true
     config-opts:
+      - "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
       - "-DDOWNLOAD_OBJECTS=OFF"
       - "-DDOWNLOAD_TITLE_SEQUENCES=OFF"
     sources:
       - type: git
         url: https://github.com/OpenRCT2/OpenRCT2.git
-        tag: v0.2.6
-        commit: 6c3c857dfa5cd0d267b89a9d70930fbacdfbaea4
+        tag: v0.3.0
+        commit: 135cc10b4766085ce35097b5830f612e36b47ba0
       - type: archive
         url: https://github.com/OpenRCT2/title-sequences/releases/download/v0.1.2c/title-sequences.zip
-        dest: data/title
+        dest: data/sequence
         strip-components: 0
         sha256: 5284333fa501270835b5f0cf420cb52155742335f5658d7889ea35d136b52517
       - type: archive
-        url: https://github.com/OpenRCT2/objects/releases/download/v1.0.15/objects.zip
+        url: https://github.com/OpenRCT2/objects/releases/download/v1.0.16/objects.zip
         dest: data/object
         strip-components: 0
-        sha256: 0171907a267c564071e587fc683bfe75f36b891a6769e0bd49a6fc46f2ae7ded
+        sha256: ac9e5b605c6ec874bbc7e01c81ac31e715598f7031b0c54ec484fbcea669768a
       - type: patch
         path: no-lstdcxxfs.patch
-      - type: patch
-        path: appdata-releases.patch
+    post-install:
+      - "cp ${FLATPAK_DEST}/share/applications/openrct2-savegame.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}-savegame.desktop"
+      - "cp ${FLATPAK_DEST}/share/applications/openrct2-scenario.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}-scenario.desktop"
+      - "cp ${FLATPAK_DEST}/share/applications/openrct2-uri.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}-uri.desktop"
+      - "cp ${FLATPAK_DEST}/share/mime/packages/openrct2.xml ${FLATPAK_DEST}/share/mime/packages/${FLATPAK_ID}.xml"
 
 cleanup:
   - /include
