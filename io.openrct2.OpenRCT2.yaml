@@ -70,8 +70,6 @@ modules:
         sha256: ac9e5b605c6ec874bbc7e01c81ac31e715598f7031b0c54ec484fbcea669768a
       - type: patch
         path: no-lstdcxxfs.patch
-      - type: patch
-        path: appdata-releases.patch
 
 cleanup:
   - /include
