@@ -46,6 +46,18 @@ modules:
         url: https://github.com/xiph/speexdsp.git
         tag: SpeexDSP-1.2.0
         commit: 64cbfa9bca7479a758351aa02bb4abdd76baa9e7
+  
+  - name: Duktape
+    buildsystem: simple
+    build-commands:
+      - make -f Makefile.sharedlibrary
+      - make -f Makefile.sharedlibrary install
+    sources:
+      - type: archive
+        url: https://duktape.org/duktape-2.5.0.tar.xz
+        sha256: 83d411560a1cd36ea132bd81d8d9885efe9285c6bc6685c4b71e69a0c4329616
+      - type: patch
+        path: duktape-installdir.patch
 
   - name: OpenRCT2
     buildsystem: cmake
