@@ -63,6 +63,7 @@ modules:
     buildsystem: cmake
     builddir: true
     config-opts:
+      - "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
       - "-DDOWNLOAD_OBJECTS=OFF"
       - "-DDOWNLOAD_TITLE_SEQUENCES=OFF"
     sources:
