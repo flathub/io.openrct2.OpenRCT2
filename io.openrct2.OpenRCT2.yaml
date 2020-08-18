@@ -22,8 +22,7 @@ finish-args:
   # OpenGL access
   - --device=dri
 modules:
-  - shared-modules/SDL/SDL-1.2.15.json
-  - shared-modules/SDL/SDL_ttf-2.0.11.json
+  # Freedesktop 19.08 runtime already contains SDL 2, so it's not built here
 
   - name: libzip
     buildsystem: cmake
