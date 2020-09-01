@@ -21,4 +21,4 @@ jobs:
           git config user.name "Workflow trigger"
           git add openrct2-git.yml
           git commit -m "Update to commit ${{ github.event.client_payload.commit }}"
-          git push https://${GITHUB_ACTOR}:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}
+          git push
