@@ -67,9 +67,7 @@ modules:
       - "-DDOWNLOAD_OBJECTS=OFF"
       - "-DDOWNLOAD_TITLE_SEQUENCES=OFF"
     sources:
-      - type: git
-        url: https://github.com/OpenRCT2/OpenRCT2.git
-        branch: develop
+      - openrct2-git.yml
       - type: archive
         url: https://github.com/OpenRCT2/title-sequences/releases/download/v0.1.2c/title-sequences.zip
         dest: data/sequence
