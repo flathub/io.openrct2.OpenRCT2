@@ -1,3 +1,4 @@
 type: git
 url: https://github.com/OpenRCT2/OpenRCT2.git
+branch: develop
 commit: 616b8e5fa8e408b61047cede1fcc2df714959d46
