@@ -32,12 +32,13 @@ modules:
         url: https://libzip.org/download/libzip-1.7.3.tar.gz
         sha256: 0e2276c550c5a310d4ebf3a2c3dfc43fb3b4602a072ff625842ad4f3238cb9cc
 
-  - name: Jansson
-    buildsystem: autotools
+  - name: Nlohmann-JSON
+    buildsystem: meson
     sources:
-      - type: archive
-        url: https://digip.org/jansson/releases/jansson-2.13.1.tar.gz
-        sha256: f4f377da17b10201a60c1108613e78ee15df6b12016b116b6de42209f47a474f
+      - type: git
+        url: https://github.com/nlohmann/json.git
+        tag: v3.9.1
+        commit: db78ac1d7716f56fc9f1b030b715f872f93964e4
 
   - name: SpeexDSP
     buildsystem: autotools
