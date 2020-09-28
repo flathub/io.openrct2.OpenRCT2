@@ -22,7 +22,6 @@ finish-args:
   # OpenGL access
   - --device=dri
 modules:
-  # Freedesktop 19.08 runtime already contains SDL 2, so it's not built here
 
   - name: libzip
     buildsystem: cmake
@@ -31,12 +30,13 @@ modules:
         url: https://libzip.org/download/libzip-1.7.3.tar.gz
         sha256: 0e2276c550c5a310d4ebf3a2c3dfc43fb3b4602a072ff625842ad4f3238cb9cc
 
-  - name: Jansson
-    buildsystem: autotools
+  - name: Nlohmann-JSON
+    buildsystem: meson
     sources:
-      - type: archive
-        url: https://digip.org/jansson/releases/jansson-2.13.1.tar.gz
-        sha256: f4f377da17b10201a60c1108613e78ee15df6b12016b116b6de42209f47a474f
+      - type: git
+        url: https://github.com/nlohmann/json.git
+        tag: v3.9.1
+        commit: db78ac1d7716f56fc9f1b030b715f872f93964e4
 
   - name: SpeexDSP
     buildsystem: autotools
@@ -45,7 +45,7 @@ modules:
         url: https://github.com/xiph/speexdsp.git
         tag: SpeexDSP-1.2.0
         commit: 64cbfa9bca7479a758351aa02bb4abdd76baa9e7
-  
+
   - name: Duktape
     buildsystem: simple
     build-commands:
@@ -68,18 +68,18 @@ modules:
     sources:
       - type: git
         url: https://github.com/OpenRCT2/OpenRCT2.git
-        tag: v0.3.0
-        commit: 135cc10b4766085ce35097b5830f612e36b47ba0
+        tag: v0.3.1
+        commit: d01dcea98a5e82b28a3a8b9ff9690986e7532d58
       - type: archive
         url: https://github.com/OpenRCT2/title-sequences/releases/download/v0.1.2c/title-sequences.zip
         dest: data/sequence
         strip-components: 0
         sha256: 5284333fa501270835b5f0cf420cb52155742335f5658d7889ea35d136b52517
       - type: archive
-        url: https://github.com/OpenRCT2/objects/releases/download/v1.0.16/objects.zip
+        url: https://github.com/OpenRCT2/objects/releases/download/v1.0.17/objects.zip
         dest: data/object
         strip-components: 0
-        sha256: ac9e5b605c6ec874bbc7e01c81ac31e715598f7031b0c54ec484fbcea669768a
+        sha256: bc31ca8ca56f40f9ff7958416611bc712932c1eda80ca94861789aa57da1740e
       - type: patch
         path: no-lstdcxxfs.patch
     post-install:
