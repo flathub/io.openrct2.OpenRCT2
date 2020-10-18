@@ -32,12 +32,14 @@ modules:
         sha256: 0e2276c550c5a310d4ebf3a2c3dfc43fb3b4602a072ff625842ad4f3238cb9cc
 
   - name: Nlohmann-JSON
-    buildsystem: meson
+    buildsystem: simple
+    build-commands:
+      - cp -r include/nlohmann ${CPLUS_INCLUDE_PATH}
     sources:
-      - type: git
-        url: https://github.com/nlohmann/json.git
-        tag: v3.9.1
-        commit: db78ac1d7716f56fc9f1b030b715f872f93964e4
+      - type: archive
+        url: https://github.com/nlohmann/json/releases/download/v3.9.1/include.zip
+        sha256: 6bea5877b1541d353bd77bdfbdb2696333ae5ed8f9e8cc22df657192218cad91
+        strip-components: 0
 
   - name: SpeexDSP
     buildsystem: autotools
