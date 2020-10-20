@@ -1,6 +1,6 @@
 app-id: io.openrct2.OpenRCT2
 runtime: org.freedesktop.Platform
-runtime-version: '19.08'
+runtime-version: '20.08'
 sdk: org.freedesktop.Sdk
 command: openrct2
 rename-appdata-file: openrct2.appdata.xml
@@ -10,9 +10,7 @@ copy-icon: true
 finish-args:
   # X11 + XShm access
   - --share=ipc
-  - --socket=fallback-x11
-  # Wayland access
-  - --socket=wayland
+  - --socket=x11
   # Pulseaudio access
   - --socket=pulseaudio
   # Filesystem access - for game files
@@ -31,12 +29,14 @@ modules:
         sha256: 0e2276c550c5a310d4ebf3a2c3dfc43fb3b4602a072ff625842ad4f3238cb9cc
 
   - name: Nlohmann-JSON
-    buildsystem: meson
+    buildsystem: simple
+    build-commands:
+      - cp -r include/nlohmann ${CPLUS_INCLUDE_PATH}
     sources:
-      - type: git
-        url: https://github.com/nlohmann/json.git
-        tag: v3.9.1
-        commit: db78ac1d7716f56fc9f1b030b715f872f93964e4
+      - type: archive
+        url: https://github.com/nlohmann/json/releases/download/v3.9.1/include.zip
+        sha256: 6bea5877b1541d353bd77bdfbdb2696333ae5ed8f9e8cc22df657192218cad91
+        strip-components: 0
 
   - name: SpeexDSP
     buildsystem: autotools
@@ -53,8 +53,8 @@ modules:
       - make -f Makefile.sharedlibrary install
     sources:
       - type: archive
-        url: https://duktape.org/duktape-2.5.0.tar.xz
-        sha256: 83d411560a1cd36ea132bd81d8d9885efe9285c6bc6685c4b71e69a0c4329616
+        url: https://duktape.org/duktape-2.6.0.tar.xz
+        sha256: 96f4a05a6c84590e53b18c59bb776aaba80a205afbbd92b82be609ba7fe75fa7
       - type: patch
         path: duktape-installdir.patch
 
