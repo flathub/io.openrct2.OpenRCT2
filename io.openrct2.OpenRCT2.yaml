@@ -68,18 +68,18 @@ modules:
     sources:
       - type: git
         url: https://github.com/OpenRCT2/OpenRCT2.git
-        tag: v0.3.1
-        commit: d01dcea98a5e82b28a3a8b9ff9690986e7532d58
+        tag: v0.3.2
+        commit: 68543def83ac3a23aabc918cd73282725e7d522c
       - type: archive
         url: https://github.com/OpenRCT2/title-sequences/releases/download/v0.1.2c/title-sequences.zip
         dest: data/sequence
         strip-components: 0
         sha256: 5284333fa501270835b5f0cf420cb52155742335f5658d7889ea35d136b52517
       - type: archive
-        url: https://github.com/OpenRCT2/objects/releases/download/v1.0.17/objects.zip
+        url: https://github.com/OpenRCT2/objects/releases/download/v1.0.18/objects.zip
         dest: data/object
         strip-components: 0
-        sha256: bc31ca8ca56f40f9ff7958416611bc712932c1eda80ca94861789aa57da1740e
+        sha256: bf8a28b7ccebaf58e4e9eb2540534632830534cf0b3f73677521dc555878c682
       - type: patch
         path: no-lstdcxxfs.patch
     post-install:
