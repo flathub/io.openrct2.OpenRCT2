@@ -23,8 +23,8 @@ modules:
     buildsystem: cmake
     sources:
       - type: archive
-        url: https://libzip.org/download/libzip-1.7.3.tar.gz
-        sha256: 0e2276c550c5a310d4ebf3a2c3dfc43fb3b4602a072ff625842ad4f3238cb9cc
+        url: https://libzip.org/download/libzip-1.8.0.tar.xz
+        sha256: f0763bda24ba947e80430be787c4b068d8b6aa6027a26a19923f0acfa3dac97e
 
   - name: Nlohmann-JSON
     buildsystem: simple
@@ -70,7 +70,7 @@ modules:
           - ./b2 -j$FLATPAK_BUILDER_N_JOBS install variant=release cxxstd=17 --layout=system
         sources:
           - type: archive
-            url: https://dl.bintray.com/boostorg/release/1.76.0/source/boost_1_76_0.tar.bz2
+            url: https://boostorg.jfrog.io/artifactory/main/release/1.76.0/source/boost_1_76_0.tar.bz2
             sha256: f0397ba6e982c4450f27bf32a2a83292aba035b827a5623a14636ea583318c41
 
   - name: OpenRCT2
