@@ -104,9 +104,11 @@ modules:
       - "mv ${FLATPAK_DEST}/share/mime/packages/openrct2.xml ${FLATPAK_DEST}/share/mime/packages/${FLATPAK_ID}.xml"
 
 cleanup:
+  - /bin/zip*
   - /include
   - /lib/pkgconfig
   - /lib/cmake
+  - /share/doc
   - /share/man
   - /share/cmake
   - '*.a'
