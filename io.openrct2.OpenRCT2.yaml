@@ -24,8 +24,8 @@ modules:
     buildsystem: cmake
     sources:
       - type: archive
-        url: https://libzip.org/download/libzip-1.7.3.tar.gz
-        sha256: 0e2276c550c5a310d4ebf3a2c3dfc43fb3b4602a072ff625842ad4f3238cb9cc
+        url: https://libzip.org/download/libzip-1.8.0.tar.xz
+        sha256: f0763bda24ba947e80430be787c4b068d8b6aa6027a26a19923f0acfa3dac97e
 
   - name: Nlohmann-JSON
     buildsystem: simple
