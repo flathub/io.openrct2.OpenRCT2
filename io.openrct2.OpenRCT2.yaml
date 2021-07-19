@@ -98,10 +98,10 @@ modules:
       - type: patch
         path: no-lstdcxxfs.patch
     post-install:
-      - "cp ${FLATPAK_DEST}/share/applications/openrct2-savegame.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}-savegame.desktop"
-      - "cp ${FLATPAK_DEST}/share/applications/openrct2-scenario.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}-scenario.desktop"
-      - "cp ${FLATPAK_DEST}/share/applications/openrct2-uri.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}-uri.desktop"
-      - "cp ${FLATPAK_DEST}/share/mime/packages/openrct2.xml ${FLATPAK_DEST}/share/mime/packages/${FLATPAK_ID}.xml"
+      - "mv ${FLATPAK_DEST}/share/applications/openrct2-savegame.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}-savegame.desktop"
+      - "mv ${FLATPAK_DEST}/share/applications/openrct2-scenario.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}-scenario.desktop"
+      - "mv ${FLATPAK_DEST}/share/applications/openrct2-uri.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}-uri.desktop"
+      - "mv ${FLATPAK_DEST}/share/mime/packages/openrct2.xml ${FLATPAK_DEST}/share/mime/packages/${FLATPAK_ID}.xml"
 
 cleanup:
   - /include
