@@ -13,8 +13,6 @@ finish-args:
   - --socket=x11
   # Pulseaudio access
   - --socket=pulseaudio
-  # Filesystem access - for game files
-  - --filesystem=home:ro
   # Network access - for multiplayer
   - --share=network
   # OpenGL access
