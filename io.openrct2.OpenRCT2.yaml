@@ -1,6 +1,6 @@
 app-id: io.openrct2.OpenRCT2
 runtime: org.freedesktop.Platform
-runtime-version: '20.08'
+runtime-version: '21.08'
 sdk: org.freedesktop.Sdk
 command: openrct2
 rename-appdata-file: openrct2.appdata.xml
@@ -33,8 +33,8 @@ modules:
       - cp -r include/nlohmann ${CPLUS_INCLUDE_PATH}
     sources:
       - type: archive
-        url: https://github.com/nlohmann/json/releases/download/v3.9.1/include.zip
-        sha256: 6bea5877b1541d353bd77bdfbdb2696333ae5ed8f9e8cc22df657192218cad91
+        url: https://github.com/nlohmann/json/releases/download/v3.10.2/include.zip
+        sha256: 61e605be15e88deeac4582aaf01c09d616f8302edde7adcaba9261ddc3b4ceca
         strip-components: 0
 
   - name: SpeexDSP
@@ -71,8 +71,8 @@ modules:
           - ./b2 -j$FLATPAK_BUILDER_N_JOBS install variant=release cxxstd=17 --layout=system
         sources:
           - type: archive
-            url: https://boostorg.jfrog.io/artifactory/main/release/1.76.0/source/boost_1_76_0.tar.bz2
-            sha256: f0397ba6e982c4450f27bf32a2a83292aba035b827a5623a14636ea583318c41
+            url: https://boostorg.jfrog.io/artifactory/main/release/1.77.0/source/boost_1_77_0.tar.bz2
+            sha256: fc9f85fc030e233142908241af7a846e60630aa7388de9a5fafb1f3a26840854
 
   - name: OpenRCT2
     buildsystem: cmake
