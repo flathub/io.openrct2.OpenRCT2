@@ -89,10 +89,10 @@ modules:
         strip-components: 0
         sha256: 5284333fa501270835b5f0cf420cb52155742335f5658d7889ea35d136b52517
       - type: archive
-        url: https://github.com/OpenRCT2/objects/releases/download/v1.0.21/objects.zip
+        url: https://github.com/OpenRCT2/objects/releases/download/v1.2.2/objects.zip
         dest: data/object
         strip-components: 0
-        sha256: b081f885311f9afebc41d9dd4a68b7db4cf736eb815c04e307e1a426f08cfa35
+        sha256: 2c77023068831c68423eb51f96251d1a06f58253414e4563ca17407d654ed96b
       - type: patch
         path: no-lstdcxxfs.patch
     post-install:
