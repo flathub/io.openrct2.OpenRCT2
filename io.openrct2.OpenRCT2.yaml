@@ -83,8 +83,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/OpenRCT2/OpenRCT2.git
-        tag: v0.3.5
-        commit: b9bc8d0606845e4e73fda8b459a55650f23164de
+        tag: v0.3.5.1
+        commit: 61c67afc667bfee8a6c3b180e98e84e87f442550
       - type: archive
         url: https://github.com/OpenRCT2/title-sequences/releases/download/v0.1.2c/title-sequences.zip
         dest: data/sequence
