@@ -32,8 +32,8 @@ modules:
       - cp -r include/nlohmann ${CPLUS_INCLUDE_PATH}
     sources:
       - type: archive
-        url: https://github.com/nlohmann/json/releases/download/v3.10.4/include.zip
-        sha256: 62c585468054e2d8e7c2759c0d990fd339d13be988577699366fe195162d16cb
+        url: https://github.com/nlohmann/json/releases/download/v3.10.5/include.zip
+        sha256: b94997df68856753b72f0d7a3703b7d484d4745c567f3584ef97c96c25a5798e
         strip-components: 0
 
   - name: SpeexDSP
@@ -46,15 +46,16 @@ modules:
 
   - name: Duktape
     buildsystem: simple
+    build-options:
+      env:
+        INSTALL_PREFIX: /app
     build-commands:
       - make -f Makefile.sharedlibrary
       - make -f Makefile.sharedlibrary install
     sources:
       - type: archive
-        url: https://duktape.org/duktape-2.6.0.tar.xz
-        sha256: 96f4a05a6c84590e53b18c59bb776aaba80a205afbbd92b82be609ba7fe75fa7
-      - type: patch
-        path: duktape-installdir.patch
+        url: https://duktape.org/duktape-2.7.0.tar.xz
+        sha256: 90f8d2fa8b5567c6899830ddef2c03f3c27960b11aca222fa17aa7ac613c2890
 
   - name: innoextract
     buildsystem: cmake-ninja
@@ -83,25 +84,29 @@ modules:
     sources:
       - type: git
         url: https://github.com/OpenRCT2/OpenRCT2.git
-        tag: v0.3.5.1
-        commit: 61c67afc667bfee8a6c3b180e98e84e87f442550
+        tag: v0.4.0
+        commit: c6302a1dae09e2539ed053390ca0dd1816448a14
       - type: archive
-        url: https://github.com/OpenRCT2/title-sequences/releases/download/v0.1.2c/title-sequences.zip
+        url: https://github.com/OpenRCT2/title-sequences/releases/download/v0.4.0/title-sequences.zip
         dest: data/sequence
         strip-components: 0
-        sha256: 5284333fa501270835b5f0cf420cb52155742335f5658d7889ea35d136b52517
+        sha256: 6e7c7b554717072bfc7acb96fd0101dc8e7f0ea0ea316367a05c2e92950c9029
       - type: archive
-        url: https://github.com/OpenRCT2/objects/releases/download/v1.0.21/objects.zip
+        url: https://github.com/OpenRCT2/objects/releases/download/v1.2.7/objects.zip
         dest: data/object
         strip-components: 0
-        sha256: b081f885311f9afebc41d9dd4a68b7db4cf736eb815c04e307e1a426f08cfa35
+        sha256: d8b8e27cab5decb2f4c16f3b57dbbc0860c49d609b099c3ecd1d6338a85eada3
       - type: patch
         path: no-lstdcxxfs.patch
     post-install:
       - "mv ${FLATPAK_DEST}/share/applications/openrct2-savegame.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}-savegame.desktop"
+      - "sed -i 's/Icon=openrct2/Icon=io.openrct2.OpenRCT2/' ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}-savegame.desktop"
       - "mv ${FLATPAK_DEST}/share/applications/openrct2-scenario.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}-scenario.desktop"
+      - "sed -i 's/Icon=openrct2/Icon=io.openrct2.OpenRCT2/' ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}-scenario.desktop"
       - "mv ${FLATPAK_DEST}/share/applications/openrct2-uri.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}-uri.desktop"
+      - "sed -i 's/Icon=openrct2/Icon=io.openrct2.OpenRCT2/' ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}-uri.desktop"
       - "mv ${FLATPAK_DEST}/share/mime/packages/openrct2.xml ${FLATPAK_DEST}/share/mime/packages/${FLATPAK_ID}.xml"
+      - "sed -i 's/<icon name=\"openrct2\"/<icon name=\"io.openrct2.OpenRCT2\"/' ${FLATPAK_DEST}/share/mime/packages/${FLATPAK_ID}.xml"
 
 cleanup:
   - /bin/zip*
