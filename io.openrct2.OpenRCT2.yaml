@@ -43,8 +43,7 @@ modules:
     buildsystem: cmake
     builddir: true
     build-options:
-      cxxflags: -O2
-      cxxflags: -g
+      cxxflags: "-g -pipe"
       cxxflags-override: true
     config-opts:
       - -DDOWNLOAD_OBJECTS=OFF
