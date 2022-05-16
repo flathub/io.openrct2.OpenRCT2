@@ -42,6 +42,10 @@ modules:
   - name: OpenRCT2
     buildsystem: cmake
     builddir: true
+    build-options:
+      cxxflags: -O2
+      cxxflags: -g
+      cxxflags-override: true
     config-opts:
       - -DDOWNLOAD_OBJECTS=OFF
       - -DDOWNLOAD_TITLE_SEQUENCES=OFF
