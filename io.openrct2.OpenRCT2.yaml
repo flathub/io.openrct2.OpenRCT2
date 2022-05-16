@@ -25,7 +25,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/dscharrer/innoextract.git
-        tag: "1.9"
+        tag: '1.9'
         commit: 81fd9b95b76ee5115ce116bfdbc3bc6b887b809d
         x-checker-data:
           type: git
@@ -71,10 +71,10 @@ modules:
           version-query: .tag_name | sub("^v"; "")
           url-query: .assets[] | select(.name=="title-sequences.zip") | .browser_download_url
       - type: archive
-        url: https://github.com/OpenRCT2/objects/releases/download/v1.2.7/objects.zip
+        url: https://github.com/OpenRCT2/objects/releases/download/v1.2.8/objects.zip
         dest: data/object
         strip-components: 0
-        sha256: d8b8e27cab5decb2f4c16f3b57dbbc0860c49d609b099c3ecd1d6338a85eada3
+        sha256: 3ff8ce135c6a6690c7b6e4b23a57f43092f6ce4bf72de4d6952e1b669c09ddc9
         x-checker-data:
           type: json
           url: https://api.github.com/repos/OpenRCT2/objects/releases/latest
@@ -83,14 +83,14 @@ modules:
       - type: patch
         path: no-lstdcxxfs.patch
     post-install:
-      - "mv ${FLATPAK_DEST}/share/applications/openrct2-savegame.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}-savegame.desktop"
-      - "sed -i 's/Icon=openrct2/Icon=io.openrct2.OpenRCT2/' ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}-savegame.desktop"
-      - "mv ${FLATPAK_DEST}/share/applications/openrct2-scenario.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}-scenario.desktop"
-      - "sed -i 's/Icon=openrct2/Icon=io.openrct2.OpenRCT2/' ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}-scenario.desktop"
-      - "mv ${FLATPAK_DEST}/share/applications/openrct2-uri.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}-uri.desktop"
-      - "sed -i 's/Icon=openrct2/Icon=io.openrct2.OpenRCT2/' ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}-uri.desktop"
-      - "mv ${FLATPAK_DEST}/share/mime/packages/openrct2.xml ${FLATPAK_DEST}/share/mime/packages/${FLATPAK_ID}.xml"
-      - "sed -i 's/<icon name=\"openrct2\"/<icon name=\"io.openrct2.OpenRCT2\"/' ${FLATPAK_DEST}/share/mime/packages/${FLATPAK_ID}.xml"
+      - mv ${FLATPAK_DEST}/share/applications/openrct2-savegame.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}-savegame.desktop
+      - sed -i 's/Icon=openrct2/Icon=io.openrct2.OpenRCT2/' ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}-savegame.desktop
+      - mv ${FLATPAK_DEST}/share/applications/openrct2-scenario.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}-scenario.desktop
+      - sed -i 's/Icon=openrct2/Icon=io.openrct2.OpenRCT2/' ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}-scenario.desktop
+      - mv ${FLATPAK_DEST}/share/applications/openrct2-uri.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}-uri.desktop
+      - sed -i 's/Icon=openrct2/Icon=io.openrct2.OpenRCT2/' ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}-uri.desktop
+      - mv ${FLATPAK_DEST}/share/mime/packages/openrct2.xml ${FLATPAK_DEST}/share/mime/packages/${FLATPAK_ID}.xml
+      - sed -i 's/<icon name="openrct2"/<icon name="io.openrct2.OpenRCT2"/' ${FLATPAK_DEST}/share/mime/packages/${FLATPAK_ID}.xml
     modules:
 
       - name: libzip
