@@ -56,10 +56,10 @@ modules:
         strip-components: 0
         sha256: 6e7c7b554717072bfc7acb96fd0101dc8e7f0ea0ea316367a05c2e92950c9029
       - type: archive
-        url: https://github.com/OpenRCT2/objects/releases/download/v1.3.0/objects.zip
+        url: https://github.com/OpenRCT2/objects/releases/download/v1.3.2/objects.zip
         dest: data/object
         strip-components: 0
-        sha256: c5daa7711951ff60730ac8c4e404b759d9fcc262c088561c42e2e15238d9f84a
+        sha256: b87ab1e343930e6263cc7ae803ff35059d53be1d7b5a37a34577c5107c8bbdea
       - type: patch
         path: no-lstdcxxfs.patch
     post-install:
@@ -78,8 +78,8 @@ modules:
         sources:
           - type: git
             url: https://github.com/nih-at/libzip.git
-            tag: v1.8.0
-            commit: 26ba5523db09213f532821875542dba7afa04b65
+            tag: v1.9.0
+            commit: c73ed238464156db0ab58adda24fdca4fdca4640
 
       - name: Nlohmann-JSON
         buildsystem: cmake-ninja
@@ -98,8 +98,8 @@ modules:
         sources:
           - type: git
             url: https://github.com/xiph/speexdsp.git
-            tag: SpeexDSP-1.2.0
-            commit: 64cbfa9bca7479a758351aa02bb4abdd76baa9e7
+            tag: SpeexDSP-1.2.1
+            commit: 1b28a0f61bc31162979e1f26f3981fc3637095c8
 
 cleanup:
   - /bin/zip*
