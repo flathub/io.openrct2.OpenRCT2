@@ -43,8 +43,7 @@ modules:
     buildsystem: cmake
     builddir: true
     build-options:
-      cxxflags: "-g -pipe"
-      cxxflags-override: true
+      cxxflags: "-Wno-error=maybe-uninitialized"
     config-opts:
       - -DDOWNLOAD_OBJECTS=OFF
       - -DDOWNLOAD_TITLE_SEQUENCES=OFF
