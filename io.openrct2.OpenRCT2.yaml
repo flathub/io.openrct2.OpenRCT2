@@ -50,7 +50,7 @@ modules:
     buildsystem: cmake
     builddir: true
     build-options:
-      cxxflags: "-Wno-error=maybe-uninitialized"
+      cxxflags: -Wno-error=maybe-uninitialized
     config-opts:
       - -DDOWNLOAD_OBJECTS=OFF
       - -DDOWNLOAD_TITLE_SEQUENCES=OFF
@@ -115,8 +115,8 @@ modules:
         sources:
           - type: git
             url: https://github.com/nlohmann/json.git
-            tag: v3.10.5
-            commit: 4f8fba14066156b73f1189a2b8bd568bde5284c5
+            tag: v3.11.0
+            commit: 499422b303f62568bd010516531b82f1b783d73b
             x-checker-data:
               type: git
               tag-pattern: ^v([\d.]+)$
