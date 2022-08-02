@@ -55,10 +55,10 @@ modules:
         strip-components: 0
         sha256: 6e7c7b554717072bfc7acb96fd0101dc8e7f0ea0ea316367a05c2e92950c9029
       - type: archive
-        url: https://github.com/OpenRCT2/objects/releases/download/v1.3.2/objects.zip
+        url: https://github.com/OpenRCT2/objects/releases/download/v1.3.3/objects.zip
         dest: data/object
         strip-components: 0
-        sha256: b87ab1e343930e6263cc7ae803ff35059d53be1d7b5a37a34577c5107c8bbdea
+        sha256: 42d38706f5fd825e0f473b4b88c1719c01d68184a0a999a7dba083ecde7e8676
       - type: patch
         path: no-lstdcxxfs.patch
     post-install:
@@ -89,8 +89,8 @@ modules:
         sources:
           - type: git
             url: https://github.com/nlohmann/json.git
-            tag: v3.10.5
-            commit: 4f8fba14066156b73f1189a2b8bd568bde5284c5
+            tag: v3.11.1
+            commit: 69d744867f8847c91a126fa25e9a6a3d67b3be41
 
       - name: SpeexDSP
         buildsystem: autotools
