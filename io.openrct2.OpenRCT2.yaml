@@ -115,8 +115,8 @@ modules:
         sources:
           - type: git
             url: https://github.com/nlohmann/json.git
-            tag: v3.11.0
-            commit: 499422b303f62568bd010516531b82f1b783d73b
+            tag: v3.11.1
+            commit: 69d744867f8847c91a126fa25e9a6a3d67b3be41
             x-checker-data:
               type: git
               tag-pattern: ^v([\d.]+)$
