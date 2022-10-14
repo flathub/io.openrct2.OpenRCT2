@@ -1,3 +1,3 @@
 {
-	"publish-delay-hours": 0
+	"end-of-life": "Develop builds are no longer provided, please install io.openrct2.OpenRCT2 from the regular Flathub repository."
 }
