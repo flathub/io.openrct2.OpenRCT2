@@ -54,6 +54,8 @@ modules:
       cxxflags: -Wno-error=maybe-uninitialized -Wno-error=restrict -Wno-error=null-dereference
     config-opts:
       - -DDOWNLOAD_OBJECTS=OFF
+      - -DDOWNLOAD_OPENSFX=OFF
+      - -DDOWNLOAD_OPENMSX=OFF
       - -DDOWNLOAD_TITLE_SEQUENCES=OFF
     sources:
       - type: git
@@ -83,6 +85,26 @@ modules:
           url: https://api.github.com/repos/OpenRCT2/objects/releases/latest
           version-query: .tag_name | sub("^v"; "")
           url-query: .assets[] | select(.name=="objects.zip") | .browser_download_url
+      - type: archive
+        url: https://github.com/OpenRCT2/OpenSoundEffects/releases/download/v1.0.2/opensound.zip
+        dest: data/assetpack/openrct2.sound.parkap
+        strip-components: 0
+        sha256: ab93e7d88190eec40b66cff84cacdb9fadc6b993fa769d4fd22ce9de98d5d22c
+        x-checker-data:
+          type: json
+          url: https://api.github.com/repos/OpenRCT2/OpenSoundEffects/releases/latest
+          version-query: .tag_name | sub("^v"; "")
+          url-query: .assets[] | select(.name=="opensound.zip") | .browser_download_url
+      - type: archive
+        url: https://github.com/OpenRCT2/OpenMusic/releases/download/v1.1.0/openmusic.zip
+        dest: data/assetpack/openrct2.music.alternative.parkap
+        strip-components: 0
+        sha256: e53e1b6c25deb81a2e1c19130d2935daa7a6741a45b46dbb58fd713135a98728
+        x-checker-data:
+          type: json
+          url: https://api.github.com/repos/OpenRCT2/OpenMusic/releases/latest
+          version-query: .tag_name | sub("^v"; "")
+          url-query: .assets[] | select(.name=="openmusic.zip") | .browser_download_url
       - type: patch
         path: no-lstdcxxfs.patch
     post-install:
