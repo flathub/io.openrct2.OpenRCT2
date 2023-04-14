@@ -38,8 +38,8 @@ modules:
           - ./b2 -j$FLATPAK_BUILDER_N_JOBS install variant=release cxxstd=17 --layout=system
         sources:
           - type: archive
-            url: https://boostorg.jfrog.io/artifactory/main/release/1.81.0/source/boost_1_81_0.tar.bz2
-            sha256: 71feeed900fbccca04a3b4f2f84a7c217186f28a940ed8b7ed4725986baf99fa
+            url: https://boostorg.jfrog.io/artifactory/main/release/1.82.0/source/boost_1_82_0.tar.bz2
+            sha256: a6e1ab9b0860e6a2881dd7b21fe9f737a095e5f33a3a874afc6a345228597ee6
             x-checker-data:
               type: html
               url: https://www.boost.org/feed/downloads.rss
@@ -76,10 +76,10 @@ modules:
           version-query: .tag_name | sub("^v"; "")
           url-query: .assets[] | select(.name=="title-sequences.zip") | .browser_download_url
       - type: archive
-        url: https://github.com/OpenRCT2/objects/releases/download/v1.3.8/objects.zip
+        url: https://github.com/OpenRCT2/objects/releases/download/v1.3.10/objects.zip
         dest: data/object
         strip-components: 0
-        sha256: 84a95590d13a753b1d239f7f06c8d121e36fd28694b21f33646518e2012904ae
+        sha256: 9238ece6781a3f34e9adc3c3307a5db17fc988fbe5b3e90673f518ab455c0235
         x-checker-data:
           type: json
           url: https://api.github.com/repos/OpenRCT2/objects/releases/latest
