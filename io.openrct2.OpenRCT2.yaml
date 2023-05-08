@@ -38,8 +38,8 @@ modules:
           - ./b2 -j$FLATPAK_BUILDER_N_JOBS install variant=release cxxstd=17 --layout=system
         sources:
           - type: archive
-            url: https://boostorg.jfrog.io/artifactory/main/release/1.81.0/source/boost_1_81_0.tar.bz2
-            sha256: 71feeed900fbccca04a3b4f2f84a7c217186f28a940ed8b7ed4725986baf99fa
+            url: https://boostorg.jfrog.io/artifactory/main/release/1.82.0/source/boost_1_82_0.tar.bz2
+            sha256: a6e1ab9b0860e6a2881dd7b21fe9f737a095e5f33a3a874afc6a345228597ee6
             x-checker-data:
               type: html
               url: https://www.boost.org/feed/downloads.rss
@@ -60,8 +60,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/OpenRCT2/OpenRCT2.git
-        tag: v0.4.4
-        commit: 9e4918cdbc3a90f3da0373fc824f675d9332d3f6
+        tag: v0.4.5
+        commit: 76ca8400cade0c6de5b47a7e44d405d56f278a83
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
@@ -76,30 +76,30 @@ modules:
           version-query: .tag_name | sub("^v"; "")
           url-query: .assets[] | select(.name=="title-sequences.zip") | .browser_download_url
       - type: archive
-        url: https://github.com/OpenRCT2/objects/releases/download/v1.3.8/objects.zip
+        url: https://github.com/OpenRCT2/objects/releases/download/v1.3.11/objects.zip
         dest: data/object
         strip-components: 0
-        sha256: 84a95590d13a753b1d239f7f06c8d121e36fd28694b21f33646518e2012904ae
+        sha256: bf85d88e4fb11ca2e5915567390898747dc2459b3c7a057bdc32b829c91780b4
         x-checker-data:
           type: json
           url: https://api.github.com/repos/OpenRCT2/objects/releases/latest
           version-query: .tag_name | sub("^v"; "")
           url-query: .assets[] | select(.name=="objects.zip") | .browser_download_url
       - type: archive
-        url: https://github.com/OpenRCT2/OpenSoundEffects/releases/download/v1.0.2/opensound.zip
+        url: https://github.com/OpenRCT2/OpenSoundEffects/releases/download/v1.0.3/opensound.zip
         dest: data/assetpack/openrct2.sound.parkap
         strip-components: 0
-        sha256: ab93e7d88190eec40b66cff84cacdb9fadc6b993fa769d4fd22ce9de98d5d22c
+        sha256: 70be1b6ff8cc24ad8031a2e0cdd445b5dd3c52c886a8e5f70401f75152e4ae6c
         x-checker-data:
           type: json
           url: https://api.github.com/repos/OpenRCT2/OpenSoundEffects/releases/latest
           version-query: .tag_name | sub("^v"; "")
           url-query: .assets[] | select(.name=="opensound.zip") | .browser_download_url
       - type: archive
-        url: https://github.com/OpenRCT2/OpenMusic/releases/download/v1.1.0/openmusic.zip
+        url: https://github.com/OpenRCT2/OpenMusic/releases/download/v1.3.0/openmusic.zip
         dest: data/assetpack/openrct2.music.alternative.parkap
         strip-components: 0
-        sha256: e53e1b6c25deb81a2e1c19130d2935daa7a6741a45b46dbb58fd713135a98728
+        sha256: b3423f574a969479d51dfa54f04edbe2557f37812409a9b5e5e52e59f71f4fb8
         x-checker-data:
           type: json
           url: https://api.github.com/repos/OpenRCT2/OpenMusic/releases/latest
