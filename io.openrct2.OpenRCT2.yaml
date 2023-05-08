@@ -50,8 +50,7 @@ modules:
     buildsystem: cmake
     builddir: true
     build-options:
-      # See https://github.com/OpenRCT2/OpenRCT2/issues/17371
-      cxxflags: -Wno-error=maybe-uninitialized -Wno-error=restrict -Wno-error=null-dereference
+      cxxflags: -Wno-error=restrict
     config-opts:
       - -DDOWNLOAD_OBJECTS=OFF
       - -DDOWNLOAD_OPENSFX=OFF
