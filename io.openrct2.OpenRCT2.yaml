@@ -65,10 +65,10 @@ modules:
           type: git
           tag-pattern: ^v([\d.]+)$
       - type: archive
-        url: https://github.com/OpenRCT2/title-sequences/releases/download/v0.4.0/title-sequences.zip
+        url: https://github.com/OpenRCT2/title-sequences/releases/download/v0.4.6/title-sequences.zip
         dest: data/sequence
         strip-components: 0
-        sha256: 6e7c7b554717072bfc7acb96fd0101dc8e7f0ea0ea316367a05c2e92950c9029
+        sha256: 24a189cdaf1f78fb6d6caede8f1ab3cedf8ab9f819cd2260a09b2cce4c710d98
         x-checker-data:
           type: json
           url: https://api.github.com/repos/OpenRCT2/title-sequences/releases/latest
@@ -95,10 +95,10 @@ modules:
           version-query: .tag_name | sub("^v"; "")
           url-query: .assets[] | select(.name=="opensound.zip") | .browser_download_url
       - type: archive
-        url: https://github.com/OpenRCT2/OpenMusic/releases/download/v1.3.0/openmusic.zip
+        url: https://github.com/OpenRCT2/OpenMusic/releases/download/v1.3.1/openmusic.zip
         dest: data/assetpack/openrct2.music.alternative.parkap
         strip-components: 0
-        sha256: b3423f574a969479d51dfa54f04edbe2557f37812409a9b5e5e52e59f71f4fb8
+        sha256: 0aa9f0e20279ef8e51e46be4c89be6aa44208cec9f46e749c7cd1d5f42ab1005
         x-checker-data:
           type: json
           url: https://api.github.com/repos/OpenRCT2/OpenMusic/releases/latest
@@ -122,8 +122,8 @@ modules:
         sources:
           - type: git
             url: https://github.com/nih-at/libzip.git
-            tag: v1.9.2
-            commit: 5532f9baa0c44cc5435ad135686a4ea009075b9a
+            tag: v1.10.0
+            commit: 1c5558391651f8492c1a4ea2b09b45014049107c
             x-checker-data:
               type: git
               tag-pattern: ^v([\d.]+)$
