@@ -17,6 +17,7 @@ finish-args:
   - --share=network
   # OpenGL access
   - --device=dri
+  - --filesystem=xdg-config/gtk-3.0:ro
 
 modules:
 
