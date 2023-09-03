@@ -38,8 +38,8 @@ modules:
           - ./b2 -j$FLATPAK_BUILDER_N_JOBS install variant=release cxxstd=17 --layout=system
         sources:
           - type: archive
-            url: https://boostorg.jfrog.io/artifactory/main/release/1.82.0/source/boost_1_82_0.tar.bz2
-            sha256: a6e1ab9b0860e6a2881dd7b21fe9f737a095e5f33a3a874afc6a345228597ee6
+            url: https://boostorg.jfrog.io/artifactory/main/release/1.83.0/source/boost_1_83_0.tar.bz2
+            sha256: 6478edfe2f3305127cffe8caf73ea0176c53769f4bf1585be237eb30798c3b8e
             x-checker-data:
               type: html
               url: https://www.boost.org/feed/downloads.rss
@@ -59,16 +59,16 @@ modules:
     sources:
       - type: git
         url: https://github.com/OpenRCT2/OpenRCT2.git
-        tag: v0.4.5
-        commit: 76ca8400cade0c6de5b47a7e44d405d56f278a83
+        tag: v0.4.6
+        commit: b40b5da5a570155298335e276839a41588337b5d
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
       - type: archive
-        url: https://github.com/OpenRCT2/title-sequences/releases/download/v0.4.0/title-sequences.zip
+        url: https://github.com/OpenRCT2/title-sequences/releases/download/v0.4.6/title-sequences.zip
         dest: data/sequence
         strip-components: 0
-        sha256: 6e7c7b554717072bfc7acb96fd0101dc8e7f0ea0ea316367a05c2e92950c9029
+        sha256: 24a189cdaf1f78fb6d6caede8f1ab3cedf8ab9f819cd2260a09b2cce4c710d98
         x-checker-data:
           type: json
           url: https://api.github.com/repos/OpenRCT2/title-sequences/releases/latest
@@ -95,10 +95,10 @@ modules:
           version-query: .tag_name | sub("^v"; "")
           url-query: .assets[] | select(.name=="opensound.zip") | .browser_download_url
       - type: archive
-        url: https://github.com/OpenRCT2/OpenMusic/releases/download/v1.3.0/openmusic.zip
+        url: https://github.com/OpenRCT2/OpenMusic/releases/download/v1.3.1/openmusic.zip
         dest: data/assetpack/openrct2.music.alternative.parkap
         strip-components: 0
-        sha256: b3423f574a969479d51dfa54f04edbe2557f37812409a9b5e5e52e59f71f4fb8
+        sha256: 0aa9f0e20279ef8e51e46be4c89be6aa44208cec9f46e749c7cd1d5f42ab1005
         x-checker-data:
           type: json
           url: https://api.github.com/repos/OpenRCT2/OpenMusic/releases/latest
@@ -122,8 +122,8 @@ modules:
         sources:
           - type: git
             url: https://github.com/nih-at/libzip.git
-            tag: v1.9.2
-            commit: 5532f9baa0c44cc5435ad135686a4ea009075b9a
+            tag: v1.10.1
+            commit: 210b09d9d2d0f4c0bbc64f92ad45c1ac53598fec
             x-checker-data:
               type: git
               tag-pattern: ^v([\d.]+)$
