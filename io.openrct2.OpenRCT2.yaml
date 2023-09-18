@@ -95,10 +95,10 @@ modules:
           version-query: .tag_name | sub("^v"; "")
           url-query: .assets[] | select(.name=="opensound.zip") | .browser_download_url
       - type: archive
-        url: https://github.com/OpenRCT2/OpenMusic/releases/download/v1.3.1/openmusic.zip
+        url: https://github.com/OpenRCT2/OpenMusic/releases/download/v1.4/openmusic.zip
         dest: data
         strip-components: 0
-        sha256: 0aa9f0e20279ef8e51e46be4c89be6aa44208cec9f46e749c7cd1d5f42ab1005
+        sha256: 78d888f5beb236f3dcce7c26cc46978147b396d36f702740f5745b5da47990ef
         x-checker-data:
           type: json
           url: https://api.github.com/repos/OpenRCT2/OpenMusic/releases/latest
