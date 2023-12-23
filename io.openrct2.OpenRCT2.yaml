@@ -38,8 +38,8 @@ modules:
           - ./b2 -j$FLATPAK_BUILDER_N_JOBS install variant=release cxxstd=17 --layout=system
         sources:
           - type: archive
-            url: https://boostorg.jfrog.io/artifactory/main/release/1.83.0/source/boost_1_83_0.tar.bz2
-            sha256: 6478edfe2f3305127cffe8caf73ea0176c53769f4bf1585be237eb30798c3b8e
+            url: https://boostorg.jfrog.io/artifactory/main/release/1.84.0/source/boost_1_84_0.tar.bz2
+            sha256: cc4b893acf645c9d4b698e9a0f08ca8846aa5d6c68275c14c3e7949c24109454
             x-checker-data:
               type: html
               url: https://www.boost.org/feed/downloads.rss
@@ -75,10 +75,10 @@ modules:
           version-query: .tag_name | sub("^v"; "")
           url-query: .assets[] | select(.name=="title-sequences.zip") | .browser_download_url
       - type: archive
-        url: https://github.com/OpenRCT2/objects/releases/download/v1.3.11/objects.zip
+        url: https://github.com/OpenRCT2/objects/releases/download/v1.3.12/objects.zip
         dest: data/object
         strip-components: 0
-        sha256: bf85d88e4fb11ca2e5915567390898747dc2459b3c7a057bdc32b829c91780b4
+        sha256: 09bd9747f434164dceb4447072862b51e738fb9865789ad92f6872bceb732f22
         x-checker-data:
           type: json
           url: https://api.github.com/repos/OpenRCT2/objects/releases/latest
@@ -95,10 +95,10 @@ modules:
           version-query: .tag_name | sub("^v"; "")
           url-query: .assets[] | select(.name=="opensound.zip") | .browser_download_url
       - type: archive
-        url: https://github.com/OpenRCT2/OpenMusic/releases/download/v1.3.1/openmusic.zip
+        url: https://github.com/OpenRCT2/OpenMusic/releases/download/v1.5/openmusic.zip
         dest: data
         strip-components: 0
-        sha256: 0aa9f0e20279ef8e51e46be4c89be6aa44208cec9f46e749c7cd1d5f42ab1005
+        sha256: c3fac4caa90398a2b4c5bb32e0dd0f44073086fe16121d3dc49b3ca120474068
         x-checker-data:
           type: json
           url: https://api.github.com/repos/OpenRCT2/OpenMusic/releases/latest
@@ -135,8 +135,8 @@ modules:
         sources:
           - type: git
             url: https://github.com/nlohmann/json.git
-            tag: v3.11.2
-            commit: bc889afb4c5bf1c0d8ee29ef35eaaf4c8bef8a5d
+            tag: v3.11.3
+            commit: 9cca280a4d0ccf0c08f47a99aa71d1b0e52f8d03
             x-checker-data:
               type: git
               tag-pattern: ^v([\d.]+)$
