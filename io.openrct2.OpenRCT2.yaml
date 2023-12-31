@@ -59,8 +59,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/OpenRCT2/OpenRCT2.git
-        tag: v0.4.6
-        commit: b40b5da5a570155298335e276839a41588337b5d
+        tag: v0.4.7
+        commit: 0e8d46ea7cfdb2118435d1735967a359f936dbea
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
@@ -75,10 +75,10 @@ modules:
           version-query: .tag_name | sub("^v"; "")
           url-query: .assets[] | select(.name=="title-sequences.zip") | .browser_download_url
       - type: archive
-        url: https://github.com/OpenRCT2/objects/releases/download/v1.3.11/objects.zip
+        url: https://github.com/OpenRCT2/objects/releases/download/v1.3.13/objects.zip
         dest: data/object
         strip-components: 0
-        sha256: bf85d88e4fb11ca2e5915567390898747dc2459b3c7a057bdc32b829c91780b4
+        sha256: 0711779d69778652d4430d4173903e2444673be374b0ed78c797b5636349b968
         x-checker-data:
           type: json
           url: https://api.github.com/repos/OpenRCT2/objects/releases/latest
@@ -95,10 +95,10 @@ modules:
           version-query: .tag_name | sub("^v"; "")
           url-query: .assets[] | select(.name=="opensound.zip") | .browser_download_url
       - type: archive
-        url: https://github.com/OpenRCT2/OpenMusic/releases/download/v1.3.1/openmusic.zip
+        url: https://github.com/OpenRCT2/OpenMusic/releases/download/v1.5/openmusic.zip
         dest: data
         strip-components: 0
-        sha256: 0aa9f0e20279ef8e51e46be4c89be6aa44208cec9f46e749c7cd1d5f42ab1005
+        sha256: c3fac4caa90398a2b4c5bb32e0dd0f44073086fe16121d3dc49b3ca120474068
         x-checker-data:
           type: json
           url: https://api.github.com/repos/OpenRCT2/OpenMusic/releases/latest
@@ -135,8 +135,8 @@ modules:
         sources:
           - type: git
             url: https://github.com/nlohmann/json.git
-            tag: v3.11.2
-            commit: bc889afb4c5bf1c0d8ee29ef35eaaf4c8bef8a5d
+            tag: v3.11.3
+            commit: 9cca280a4d0ccf0c08f47a99aa71d1b0e52f8d03
             x-checker-data:
               type: git
               tag-pattern: ^v([\d.]+)$
