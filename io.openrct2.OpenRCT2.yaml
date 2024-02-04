@@ -22,6 +22,8 @@ modules:
 
   - name: innoextract
     buildsystem: cmake-ninja
+    config-opts:
+      - -DCMAKE_BUILD_TYPE=Release
     sources:
       - type: git
         url: https://github.com/dscharrer/innoextract.git
@@ -52,6 +54,7 @@ modules:
     build-options:
       cxxflags: -Wno-error=restrict
     config-opts:
+      - -DCMAKE_BUILD_TYPE=Release
       - -DDOWNLOAD_OBJECTS=OFF
       - -DDOWNLOAD_OPENSFX=OFF
       - -DDOWNLOAD_OPENMSX=OFF
@@ -117,6 +120,8 @@ modules:
 
       - name: libzip
         buildsystem: cmake
+        config-opts:
+          - -DCMAKE_BUILD_TYPE=Release
         sources:
           - type: git
             url: https://github.com/nih-at/libzip.git
@@ -129,6 +134,7 @@ modules:
       - name: Nlohmann-JSON
         buildsystem: cmake-ninja
         config-opts:
+          - -DCMAKE_BUILD_TYPE=Release
           - -DJSON_BuildTests=OFF
           - -DJSON_MultipleHeaders=ON
           - -DJSON_SystemInclude=ON
