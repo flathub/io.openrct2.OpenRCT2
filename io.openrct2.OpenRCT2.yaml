@@ -67,6 +67,9 @@ modules:
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
+      # Temporarily fix Appdata
+      - type: patch
+        path: appdata-fix.patch
       - type: archive
         url: https://github.com/OpenRCT2/title-sequences/releases/download/v0.4.6/title-sequences.zip
         dest: data/sequence
