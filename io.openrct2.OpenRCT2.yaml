@@ -81,10 +81,10 @@ modules:
           version-query: .tag_name | sub("^v"; "")
           url-query: .assets[] | select(.name=="title-sequences.zip") | .browser_download_url
       - type: archive
-        url: https://github.com/OpenRCT2/objects/releases/download/v1.3.13/objects.zip
+        url: https://github.com/OpenRCT2/objects/releases/download/v1.4.0/objects.zip
         dest: data/object
         strip-components: 0
-        sha256: 0711779d69778652d4430d4173903e2444673be374b0ed78c797b5636349b968
+        sha256: c7ea3f5c6dfe2ef0a7ac0a428fc9281beac7f5290f0a9ebecbfb6313a3b525d8
         x-checker-data:
           type: json
           url: https://api.github.com/repos/OpenRCT2/objects/releases/latest
