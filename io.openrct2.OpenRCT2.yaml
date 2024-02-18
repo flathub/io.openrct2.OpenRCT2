@@ -67,6 +67,7 @@ modules:
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
+          is-main-source: true
       # Temporarily fix Appdata
       - type: patch
         path: appdata-fix.patch
