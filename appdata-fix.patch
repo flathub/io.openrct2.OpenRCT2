@@ -1,18 +1,19 @@
 diff --git a/distribution/linux/openrct2.appdata.xml b/distribution/linux/openrct2.appdata.xml
-index ff1d2e50c..f0b840b0a 100644
+index ff1d2e50c..563b936b1 100644
 --- a/distribution/linux/openrct2.appdata.xml
 +++ b/distribution/linux/openrct2.appdata.xml
-@@ -4,7 +4,8 @@
+@@ -4,7 +4,9 @@
    <metadata_license>CC0-1.0</metadata_license>
    <project_license>GPL-3.0</project_license>
    <name>OpenRCT2</name>
 -  <summary>A construction and management simulation video game that simulates amusement park management</summary>
 +  <summary>Amusement park simulation</summary>
 +  <developer_name>The OpenRCT2 Team</developer_name>
++  <launchable type="desktop-id">openrct2.desktop</launchable>
    <description>
      <p>
        OpenRCT2 is an open-source re-implementation of RollerCoaster Tycoon 2 (RCT2).
-@@ -35,7 +36,8 @@
+@@ -35,7 +37,8 @@
    </description>
    <screenshots>
      <screenshot type="default">
