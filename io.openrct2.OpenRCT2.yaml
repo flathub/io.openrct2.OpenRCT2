@@ -6,6 +6,9 @@ command: openrct2
 rename-appdata-file: openrct2.appdata.xml
 rename-desktop-file: openrct2.desktop
 rename-icon: openrct2
+rename-mime-file: openrct2.xml
+rename-mime-icons:
+  - openrct2
 copy-icon: true
 finish-args:
   # X11 + XShm access
@@ -115,8 +118,6 @@ modules:
       - desktop-file-edit --set-icon=${FLATPAK_ID} ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}-savegame.desktop
       - desktop-file-edit --set-icon=${FLATPAK_ID} ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}-scenario.desktop
       - desktop-file-edit --set-icon=${FLATPAK_ID} ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}-uri.desktop
-      - install ${FLATPAK_DEST}/share/mime/packages/openrct2.xml ${FLATPAK_DEST}/share/mime/packages/${FLATPAK_ID}.xml
-      - sed -i "s/<icon name=\"openrct2\"/<icon name=\"${FLATPAK_ID}\"/" ${FLATPAK_DEST}/share/mime/packages/${FLATPAK_ID}.xml
     modules:
 
       - name: libzip
