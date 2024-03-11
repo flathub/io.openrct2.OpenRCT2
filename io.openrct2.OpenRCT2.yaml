@@ -154,7 +154,6 @@ cleanup:
   - /include
   - /lib/pkgconfig
   - /lib/cmake
-  - /share/doc
   - /share/man
   - /share/cmake
   - '*.a'
