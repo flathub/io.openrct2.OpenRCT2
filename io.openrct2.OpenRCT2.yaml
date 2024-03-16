@@ -20,6 +20,8 @@ finish-args:
   - --share=network
   # OpenGL access
   - --device=dri
+  # Discord RPC
+  - --filesystem=xdg-run/app/com.discordapp.Discord:create
 
 modules:
 
@@ -149,6 +151,49 @@ modules:
               type: git
               tag-pattern: ^v([\d.]+)$
 
+      - name: discord-rpc
+        buildsystem: cmake-ninja
+        config-opts:
+          - -DCMAKE_BUILD_TYPE=Release
+          - -DBUILD_EXAMPLES=OFF
+          - -DBUILD_SHARED_LIBS=ON
+        sources:
+          - type: git
+            url: https://github.com/discord/discord-rpc.git
+            tag: v3.4.0
+            commit: e6390c8c4190b59f1cc98bcec688e0037b84974d
+            x-checker-data:
+              type: git
+              tag-pattern: ^v([\d.]+)$
+        modules:
+          - name: rapidjson
+            buildsystem: cmake-ninja
+            config-opts:
+              - -DCMAKE_BUILD_TYPE=Release
+              - -DRAPIDJSON_BUILD_DOC=OFF
+              - -DRAPIDJSON_BUILD_EXAMPLES=OFF
+              - -DRAPIDJSON_BUILD_TESTS=OFF
+            sources:
+              - type: git
+                url: https://github.com/Tencent/rapidjson.git
+                tag: v1.1.0
+                commit: f54b0e47a08782a6131cc3d60f94d038fa6e0a51
+                disable-submodules: true
+                x-checker-data:
+                  type: git
+                  tag-pattern: ^v([\d.]+)$
+            cleanup:
+              - /share/doc
+
+  - name: wrapper
+    buildsystem: simple
+    build-commands:
+      - mv $FLATPAK_DEST/bin/openrct2 $FLATPAK_DEST/bin/openrct2-wrapped
+      - install -Dm755 openrct2-wrapper $FLATPAK_DEST/bin/openrct2
+    sources:
+      - type: file
+        path: openrct2-wrapper
+
 cleanup:
   - /bin/zip*
   - /include
@@ -156,5 +201,6 @@ cleanup:
   - /lib/cmake
   - /share/man
   - /share/cmake
+  - /share/pkgconfig
   - '*.a'
   - '*.la'
