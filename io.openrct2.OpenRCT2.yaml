@@ -45,8 +45,8 @@ modules:
           - ./b2 -j$FLATPAK_BUILDER_N_JOBS install variant=release cxxstd=17 --layout=system
         sources:
           - type: archive
-            url: https://boostorg.jfrog.io/artifactory/main/release/1.84.0/source/boost_1_84_0.tar.bz2
-            sha256: cc4b893acf645c9d4b698e9a0f08ca8846aa5d6c68275c14c3e7949c24109454
+            url: https://boostorg.jfrog.io/artifactory/main/release/1.85.0/source/boost_1_85_0.tar.bz2
+            sha256: 7009fe1faa1697476bdc7027703a2badb84e849b7b0baad5086b087b971f8617
             x-checker-data:
               type: html
               url: https://www.boost.org/feed/downloads.rss
@@ -67,8 +67,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/OpenRCT2/OpenRCT2.git
-        tag: v0.4.10
-        commit: e55d761eb7029a496851cf16ac22a591a2fcd040
+        tag: v0.4.11
+        commit: 18d2b5ef6e02fe6a702dca04e95371e8dd60b4ec
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
@@ -84,10 +84,10 @@ modules:
           version-query: .tag_name | sub("^v"; "")
           url-query: .assets[] | select(.name=="title-sequences.zip") | .browser_download_url
       - type: archive
-        url: https://github.com/OpenRCT2/objects/releases/download/v1.4.3/objects.zip
+        url: https://github.com/OpenRCT2/objects/releases/download/v1.4.4/objects.zip
         dest: data/object
         strip-components: 0
-        sha256: cc2c8304e35337fb7b4daffa9b0ad1afa9a9f3f8f895817671a71c665d372764
+        sha256: da017b90a3870649cb4ff22e14edfc746259af048967311d1133cf4c836ae5a0
         x-checker-data:
           type: json
           url: https://api.github.com/repos/OpenRCT2/objects/releases/latest
