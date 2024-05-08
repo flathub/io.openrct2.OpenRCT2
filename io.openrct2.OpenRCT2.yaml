@@ -60,7 +60,7 @@ modules:
               url-template: https://boostorg.jfrog.io/artifactory/main/release/$version0.$version2.$version4/source/boost_$version.tar.bz2
 
   - name: OpenRCT2
-    buildsystem: cmake
+    buildsystem: cmake-ninja
     builddir: true
     build-options:
       cxxflags: -Wno-error=restrict
@@ -129,7 +129,7 @@ modules:
     modules:
 
       - name: libzip
-        buildsystem: cmake
+        buildsystem: cmake-ninja
         config-opts:
           - -DCMAKE_BUILD_TYPE=Release
         sources:
