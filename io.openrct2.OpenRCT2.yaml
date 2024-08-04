@@ -73,8 +73,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/OpenRCT2/OpenRCT2.git
-        tag: v0.4.12
-        commit: 1b5ff882d3e5902a80eec39a9c923eb8ed5c320d
+        tag: v0.4.13
+        commit: caacd4d7be8258e3e3f2b69c9d87eecc2b4ac119
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
@@ -90,10 +90,10 @@ modules:
           version-query: .tag_name | sub("^v"; "")
           url-query: .assets[] | select(.name=="title-sequences.zip") | .browser_download_url
       - type: archive
-        url: https://github.com/OpenRCT2/objects/releases/download/v1.4.6/objects.zip
+        url: https://github.com/OpenRCT2/objects/releases/download/v1.4.7/objects.zip
         dest: data/object
         strip-components: 0
-        sha256: 5a8b54d021e167604051fd508da109d9ebc660638f57252bba729f76bb246387
+        sha256: 003c7d8a68a2461ac27204a361ffe6eab66e3aff262755b9830c97ce36d6fb65
         x-checker-data:
           type: json
           url: https://api.github.com/repos/OpenRCT2/objects/releases/latest
@@ -110,10 +110,10 @@ modules:
           version-query: .tag_name | sub("^v"; "")
           url-query: .assets[] | select(.name=="opensound.zip") | .browser_download_url
       - type: archive
-        url: https://github.com/OpenRCT2/OpenMusic/releases/download/v1.5/openmusic.zip
+        url: https://github.com/OpenRCT2/OpenMusic/releases/download/v1.6/openmusic.zip
         dest: data
         strip-components: 0
-        sha256: c3fac4caa90398a2b4c5bb32e0dd0f44073086fe16121d3dc49b3ca120474068
+        sha256: f097d3a4ccd39f7546f97db3ecb1b8be73648f53b7a7595b86cccbdc1a7557e4
         x-checker-data:
           type: json
           url: https://api.github.com/repos/OpenRCT2/OpenMusic/releases/latest
