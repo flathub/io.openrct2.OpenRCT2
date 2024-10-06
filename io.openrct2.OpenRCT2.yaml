@@ -73,8 +73,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/OpenRCT2/OpenRCT2.git
-        tag: v0.4.14
-        commit: 18492da2296ac6355844c7e53a56e584ee637b6f
+        tag: v0.4.15
+        commit: c7c8fad822d10e7fbec26eeefbf2e552a02b8ea9
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
@@ -90,10 +90,10 @@ modules:
           version-query: .tag_name | sub("^v"; "")
           url-query: .assets[] | select(.name=="title-sequences.zip") | .browser_download_url
       - type: archive
-        url: https://github.com/OpenRCT2/objects/releases/download/v1.4.7/objects.zip
+        url: https://github.com/OpenRCT2/objects/releases/download/v1.4.8/objects.zip
         dest: data/object
         strip-components: 0
-        sha256: 003c7d8a68a2461ac27204a361ffe6eab66e3aff262755b9830c97ce36d6fb65
+        sha256: ea78872f9f777fb6b27019e4b880e4cb9766658ee8ae95f76985af0b9658eb4d
         x-checker-data:
           type: json
           url: https://api.github.com/repos/OpenRCT2/objects/releases/latest
@@ -118,7 +118,7 @@ modules:
           type: json
           url: https://api.github.com/repos/OpenRCT2/OpenMusic/releases/latest
           version-query: .tag_name | sub("^v"; "")
-          url-query: .assets[] | select(.name=="openmusic.zip") | .browser_download_url 
+          url-query: .assets[] | select(.name=="openmusic.zip") | .browser_download_url
       - type: patch
         path: fix-screenshot.patch
     post-install:
@@ -137,8 +137,8 @@ modules:
         sources:
           - type: git
             url: https://github.com/nih-at/libzip.git
-            tag: v1.10.1
-            commit: 210b09d9d2d0f4c0bbc64f92ad45c1ac53598fec
+            tag: v1.11.1
+            commit: 9c8b818a1de143a4a8ee445351fb8f92115e33e1
             x-checker-data:
               type: git
               tag-pattern: ^v([\d.]+)$
