@@ -119,8 +119,6 @@ modules:
           url: https://api.github.com/repos/OpenRCT2/OpenMusic/releases/latest
           version-query: .tag_name | sub("^v"; "")
           url-query: .assets[] | select(.name=="openmusic.zip") | .browser_download_url
-      - type: patch
-        path: fix-screenshot.patch
     post-install:
       - install ${FLATPAK_DEST}/share/applications/openrct2-savegame.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}-savegame.desktop
       - install ${FLATPAK_DEST}/share/applications/openrct2-scenario.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}-scenario.desktop
