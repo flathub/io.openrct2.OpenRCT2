@@ -13,7 +13,8 @@ copy-icon: true
 finish-args:
   # X11 + XShm access
   - --share=ipc
-  - --socket=x11
+  - --socket=wayland
+  - --socket=fallback-x11
   # Pulseaudio access
   - --socket=pulseaudio
   # Network access - for multiplayer
