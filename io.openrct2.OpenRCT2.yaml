@@ -1,6 +1,6 @@
 app-id: io.openrct2.OpenRCT2
 runtime: org.freedesktop.Platform
-runtime-version: '23.08'
+runtime-version: '24.08'
 sdk: org.freedesktop.Sdk
 command: openrct2
 rename-appdata-file: openrct2.appdata.xml
@@ -42,7 +42,7 @@ modules:
           tag-pattern: ^([\d.]+)$
       # See https://github.com/dscharrer/innoextract/commit/264c2fe6b84f90f6290c670e5f676660ec7b2387
       - type: patch
-        path: fix-innoextract-boost.patch
+        path: patches/innoextract/264c2fe6b84f90f6290c670e5f676660ec7b2387.patch
     modules:
       - name: boost
         buildsystem: simple
@@ -188,6 +188,10 @@ modules:
                 x-checker-data:
                   type: git
                   tag-pattern: ^v([\d.]+)$
+              - type: patch
+                paths:
+                  - patches/rapidjson/3b2441b87f99ab65f37b141a7b548ebadb607b96.patch
+                  - patches/rapidjson/862c39be371278a45a88d4d1d75164be57bb7e2d.patch
             cleanup:
               - /share/doc
 
