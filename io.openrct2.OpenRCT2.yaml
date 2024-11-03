@@ -74,8 +74,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/OpenRCT2/OpenRCT2.git
-        tag: v0.4.15
-        commit: c7c8fad822d10e7fbec26eeefbf2e552a02b8ea9
+        tag: v0.4.16
+        commit: c1082a3d6ca9167832578fc50c0d128b565943c9
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
@@ -91,10 +91,10 @@ modules:
           version-query: .tag_name | sub("^v"; "")
           url-query: .assets[] | select(.name=="title-sequences.zip") | .browser_download_url
       - type: archive
-        url: https://github.com/OpenRCT2/objects/releases/download/v1.4.8/objects.zip
+        url: https://github.com/OpenRCT2/objects/releases/download/v1.4.10/objects.zip
         dest: data/object
         strip-components: 0
-        sha256: ea78872f9f777fb6b27019e4b880e4cb9766658ee8ae95f76985af0b9658eb4d
+        sha256: 186a05c91b9a6c328ad0994454033434fe864a8606c1d126485f7469a8e5539c
         x-checker-data:
           type: json
           url: https://api.github.com/repos/OpenRCT2/objects/releases/latest
@@ -136,8 +136,8 @@ modules:
         sources:
           - type: git
             url: https://github.com/nih-at/libzip.git
-            tag: v1.11.1
-            commit: 9c8b818a1de143a4a8ee445351fb8f92115e33e1
+            tag: v1.11.2
+            commit: 64b62d6b1a686a1b0bac1b6b9dcb635be0499afb
             x-checker-data:
               type: git
               tag-pattern: ^v([\d.]+)$
