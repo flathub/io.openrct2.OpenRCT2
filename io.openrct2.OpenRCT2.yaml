@@ -72,8 +72,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/OpenRCT2/OpenRCT2.git
-        tag: v0.4.19
-        commit: 088081dae628046b1f35db47790b992a3cc38dcc
+        tag: v0.4.19.1
+        commit: 455f22bbca7b519f41d90705ee323df36b37ed9a
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
