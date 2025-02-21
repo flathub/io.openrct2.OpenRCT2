@@ -24,6 +24,7 @@ finish-args:
   # Access to host Steam-installed RCT and RCT2 for auto-detection in OpenRCT2
   - --filesystem=~/.local/share/Steam/steamapps/common/Rollercoaster Tycoon Deluxe:ro
   - --filesystem=~/.local/share/Steam/steamapps/common/Rollercoaster Tycoon 2:ro
+  - --filesystem=~/.local/share/Steam/steamapps/common/RollerCoaster Tycoon Classic:ro
 
 modules:
 
