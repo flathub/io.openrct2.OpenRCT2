@@ -51,8 +51,8 @@ modules:
           - ./b2 -j$FLATPAK_BUILDER_N_JOBS install variant=release cxxstd=17 --layout=system
         sources:
           - type: archive
-            url: https://archives.boost.io/release/1.86.0/source/boost_1_86_0.tar.bz2
-            sha256: 1bed88e40401b2cb7a1f76d4bab499e352fa4d0c5f31c0dbae64e24d34d7513b
+            url: https://archives.boost.io/release/1.87.0/source/boost_1_87_0.tar.bz2
+            sha256: af57be25cb4c4f4b413ed692fe378affb4352ea50fbe294a11ef548f4d527d89
             x-checker-data:
               type: html
               url: https://www.boost.org/feed/downloads.rss
@@ -73,8 +73,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/OpenRCT2/OpenRCT2.git
-        tag: v0.4.19.1
-        commit: 455f22bbca7b519f41d90705ee323df36b37ed9a
+        tag: v0.4.20
+        commit: 1c1b6d4b26e0f7d564b00a4d10e1770b93bfbda7
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
