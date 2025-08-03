@@ -76,8 +76,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/OpenRCT2/OpenRCT2.git
-        tag: v0.4.24
-        commit: 8592e6b87708f9082662bb14c3a308e4a338b0c7
+        tag: v0.4.25
+        commit: de986f58fdf296f89b87455a323ba644ea85849e
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
@@ -93,30 +93,30 @@ modules:
           version-query: .tag_name | sub("^v"; "")
           url-query: .assets[] | select(.name=="title-sequences.zip") | .browser_download_url
       - type: archive
-        url: https://github.com/OpenRCT2/objects/releases/download/v1.7.1/objects.zip
+        url: https://github.com/OpenRCT2/objects/releases/download/v1.7.2/objects.zip
         dest: data/object
         strip-components: 0
-        sha256: 679bacb320e0106f4cacfc6619a4b2e322936f55bda8c1447446bc26dbfea193
+        sha256: b4286f7af68a61b0f7fc6e379ba37bf6796286d73e97c967958bf374e3f98f35
         x-checker-data:
           type: json
           url: https://api.github.com/repos/OpenRCT2/objects/releases/latest
           version-query: .tag_name | sub("^v"; "")
           url-query: .assets[] | select(.name=="objects.zip") | .browser_download_url
       - type: archive
-        url: https://github.com/OpenRCT2/OpenSoundEffects/releases/download/v1.0.5/opensound.zip
+        url: https://github.com/OpenRCT2/OpenSoundEffects/releases/download/v1.0.6/opensound.zip
         dest: data
         strip-components: 0
-        sha256: a952148be164c128e4fd3aea96822e5f051edd9a0b1f2c84de7f7628ce3b2e18
+        sha256: 06b90f3e19c216752df441d551b26a9e3e1ba7755bdd2102504b73bf993608be
         x-checker-data:
           type: json
           url: https://api.github.com/repos/OpenRCT2/OpenSoundEffects/releases/latest
           version-query: .tag_name | sub("^v"; "")
           url-query: .assets[] | select(.name=="opensound.zip") | .browser_download_url
       - type: archive
-        url: https://github.com/OpenRCT2/OpenMusic/releases/download/v1.6/openmusic.zip
+        url: https://github.com/OpenRCT2/OpenMusic/releases/download/v1.6.1/openmusic.zip
         dest: data
         strip-components: 0
-        sha256: f097d3a4ccd39f7546f97db3ecb1b8be73648f53b7a7595b86cccbdc1a7557e4
+        sha256: 994b350d3b180ee1cb9619fe27f7ebae3a1a5232840c4bd47a89f33fa89de1a1
         x-checker-data:
           type: json
           url: https://api.github.com/repos/OpenRCT2/OpenMusic/releases/latest
