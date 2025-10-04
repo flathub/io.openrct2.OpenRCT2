@@ -3,8 +3,8 @@ runtime: org.freedesktop.Platform
 runtime-version: '24.08'
 sdk: org.freedesktop.Sdk
 command: openrct2
-rename-appdata-file: openrct2.appdata.xml
-rename-desktop-file: openrct2.desktop
+rename-appdata-file: io.openrct2.openrct2.appdata.xml
+rename-desktop-file: io.openrct2.openrct2.desktop
 rename-icon: openrct2
 rename-mime-file: openrct2.xml
 
@@ -76,17 +76,17 @@ modules:
     sources:
       - type: git
         url: https://github.com/OpenRCT2/OpenRCT2.git
-        tag: v0.4.26
-        commit: 84fc3bcf5eb4c23232fad9876fe976f36764ab05
+        tag: v0.4.27
+        commit: dbb9fd9decd13e937f14d5c293905160ba9c7ad2
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
           is-main-source: true
       - type: archive
-        url: https://github.com/OpenRCT2/title-sequences/releases/download/v0.4.14/title-sequences.zip
+        url: https://github.com/OpenRCT2/title-sequences/releases/download/v0.4.26/title-sequences.zip
         dest: data/sequence
         strip-components: 0
-        sha256: 140df714e806fed411cc49763e7f16b0fcf2a487a57001d1e50fce8f9148a9f3
+        sha256: dabb9787b1576342fca4dd9f64b3f8cfa04a7e6ce9c2bb9610f47b762905c858
         x-checker-data:
           type: json
           url: https://api.github.com/repos/OpenRCT2/title-sequences/releases/latest
@@ -123,12 +123,12 @@ modules:
           version-query: .tag_name | sub("^v"; "")
           url-query: .assets[] | select(.name=="openmusic.zip") | .browser_download_url
     post-install:
-      - install ${FLATPAK_DEST}/share/applications/openrct2-savegame.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}-savegame.desktop
-      - install ${FLATPAK_DEST}/share/applications/openrct2-scenario.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}-scenario.desktop
-      - install ${FLATPAK_DEST}/share/applications/openrct2-uri.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}-uri.desktop
-      - desktop-file-edit --set-icon=${FLATPAK_ID} ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}-savegame.desktop
-      - desktop-file-edit --set-icon=${FLATPAK_ID} ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}-scenario.desktop
-      - desktop-file-edit --set-icon=${FLATPAK_ID} ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}-uri.desktop
+      - mv ${FLATPAK_DEST}/share/applications/io.openrct2.savegame.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.savegame.desktop
+      - mv ${FLATPAK_DEST}/share/applications/io.openrct2.scenario.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.scenario.desktop
+      - mv ${FLATPAK_DEST}/share/applications/io.openrct2.uri.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.uri.desktop
+      - desktop-file-edit --set-icon=${FLATPAK_ID} ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.savegame.desktop
+      - desktop-file-edit --set-icon=${FLATPAK_ID} ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.scenario.desktop
+      - desktop-file-edit --set-icon=${FLATPAK_ID} ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.uri.desktop
       - sed -i "s/<icon name=\"openrct2\"/<icon name=\"${FLATPAK_ID}\"/" ${FLATPAK_DEST}/share/mime/packages/openrct2.xml
     modules:
 
