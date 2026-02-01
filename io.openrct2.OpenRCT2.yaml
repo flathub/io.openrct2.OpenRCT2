@@ -76,8 +76,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/OpenRCT2/OpenRCT2.git
-        tag: v0.4.30
-        commit: b0f30a5bfaef581746842ee8e81837417a758aa8
+        tag: v0.4.31
+        commit: dae57fccf678b3eb2edc38e80c13186de8dd1045
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
@@ -93,10 +93,10 @@ modules:
           version-query: .tag_name | sub("^v"; "")
           url-query: .assets[] | select(.name=="title-sequences.zip") | .browser_download_url
       - type: archive
-        url: https://github.com/OpenRCT2/objects/releases/download/v1.7.5/objects.zip
+        url: https://github.com/OpenRCT2/objects/releases/download/v1.7.6/objects.zip
         dest: data/object
         strip-components: 0
-        sha256: c8b9d3039a920f67caf15b09e8312cc4f80d59ed7fe0288625b9ccedef606797
+        sha256: 6aca2eb441fbe8c022ff84d59fb51ed7ea577756640970dc989eab685ff45696
         x-checker-data:
           type: json
           url: https://api.github.com/repos/OpenRCT2/objects/releases/latest
