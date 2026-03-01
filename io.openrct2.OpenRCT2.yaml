@@ -1,6 +1,6 @@
 app-id: io.openrct2.OpenRCT2
 runtime: org.freedesktop.Platform
-runtime-version: '24.08'
+runtime-version: "24.08"
 sdk: org.freedesktop.Sdk
 command: openrct2
 rename-appdata-file: io.openrct2.openrct2.appdata.xml
@@ -29,7 +29,6 @@ finish-args:
   - --filesystem=~/.local/share/Steam/steamapps/common/RollerCoaster Tycoon Classic:ro
 
 modules:
-
   - name: innoextract
     buildsystem: cmake-ninja
     config-opts:
@@ -37,7 +36,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/dscharrer/innoextract.git
-        tag: '1.9'
+        tag: "1.9"
         commit: 81fd9b95b76ee5115ce116bfdbc3bc6b887b809d
         x-checker-data:
           type: git
@@ -122,9 +121,6 @@ modules:
           url: https://api.github.com/repos/OpenRCT2/OpenMusic/releases/latest
           version-query: .tag_name | sub("^v"; "")
           url-query: .assets[] | select(.name=="openmusic.zip") | .browser_download_url
-      - type: patch
-        paths:
-          - patches/openrct2/11e354cec41f0134b9e15590e5636028bbd3b677.patch
     post-install:
       - mv ${FLATPAK_DEST}/share/applications/io.openrct2.savegame.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.savegame.desktop
       - mv ${FLATPAK_DEST}/share/applications/io.openrct2.scenario.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.scenario.desktop
@@ -134,7 +130,6 @@ modules:
       - desktop-file-edit --set-icon=${FLATPAK_ID} ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.uri.desktop
       - sed -i "s/<icon name=\"openrct2\"/<icon name=\"${FLATPAK_ID}\"/" ${FLATPAK_DEST}/share/mime/packages/openrct2.xml
     modules:
-
       - name: libzip
         buildsystem: cmake-ninja
         config-opts:
@@ -219,5 +214,5 @@ cleanup:
   - /share/man
   - /share/cmake
   - /share/pkgconfig
-  - '*.a'
-  - '*.la'
+  - "*.a"
+  - "*.la"
