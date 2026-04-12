@@ -1,6 +1,6 @@
 app-id: io.openrct2.OpenRCT2
 runtime: org.freedesktop.Platform
-runtime-version: "24.08"
+runtime-version: '24.08'
 sdk: org.freedesktop.Sdk
 command: openrct2
 rename-appdata-file: io.openrct2.openrct2.appdata.xml
@@ -36,7 +36,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/dscharrer/innoextract.git
-        tag: "1.9"
+        tag: '1.9'
         commit: 81fd9b95b76ee5115ce116bfdbc3bc6b887b809d
         x-checker-data:
           type: git
@@ -75,8 +75,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/OpenRCT2/OpenRCT2.git
-        tag: v0.4.32
-        commit: 25c7379b4660c06b60b78d0a0b54b55e86224c46
+        tag: v0.5.0
+        commit: 075993c2c6f8a4a5ee5106f6bece678bbdaccc87
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
@@ -92,10 +92,10 @@ modules:
           version-query: .tag_name | sub("^v"; "")
           url-query: .assets[] | select(.name=="title-sequences.zip") | .browser_download_url
       - type: archive
-        url: https://github.com/OpenRCT2/objects/releases/download/v1.7.6/objects.zip
+        url: https://github.com/OpenRCT2/objects/releases/download/v1.7.9/objects.zip
         dest: data/object
         strip-components: 0
-        sha256: 6aca2eb441fbe8c022ff84d59fb51ed7ea577756640970dc989eab685ff45696
+        sha256: 55461ed20c6e82f14e9a279cd844654b0264999bb94034d58fa912fdee26ead6
         x-checker-data:
           type: json
           url: https://api.github.com/repos/OpenRCT2/objects/releases/latest
@@ -214,5 +214,5 @@ cleanup:
   - /share/man
   - /share/cmake
   - /share/pkgconfig
-  - "*.a"
-  - "*.la"
+  - '*.a'
+  - '*.la'
