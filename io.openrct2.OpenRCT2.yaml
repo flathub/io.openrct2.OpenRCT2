@@ -29,7 +29,6 @@ finish-args:
   - --filesystem=~/.local/share/Steam/steamapps/common/RollerCoaster Tycoon Classic:ro
 
 modules:
-
   - name: innoextract
     buildsystem: cmake-ninja
     config-opts:
@@ -79,8 +78,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/OpenRCT2/OpenRCT2.git
-        tag: v0.4.29
-        commit: ebe87be3da69d0c403ecd80cc4aa02a538ea9960
+        tag: v0.5.1
+        commit: 90bec9b246a534d4a8b41a786a5e5725d6bf0dd5
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
@@ -96,10 +95,10 @@ modules:
           version-query: .tag_name | sub("^v"; "")
           url-query: .assets[] | select(.name=="title-sequences.zip") | .browser_download_url
       - type: archive
-        url: https://github.com/OpenRCT2/objects/releases/download/v1.7.5/objects.zip
+        url: https://github.com/OpenRCT2/objects/releases/download/v1.7.9/objects.zip
         dest: data/object
         strip-components: 0
-        sha256: c8b9d3039a920f67caf15b09e8312cc4f80d59ed7fe0288625b9ccedef606797
+        sha256: 55461ed20c6e82f14e9a279cd844654b0264999bb94034d58fa912fdee26ead6
         x-checker-data:
           type: json
           url: https://api.github.com/repos/OpenRCT2/objects/releases/latest
@@ -134,7 +133,6 @@ modules:
       - desktop-file-edit --set-icon=${FLATPAK_ID} ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.uri.desktop
       - sed -i "s/<icon name=\"openrct2\"/<icon name=\"${FLATPAK_ID}\"/" ${FLATPAK_DEST}/share/mime/packages/openrct2.xml
     modules:
-
       - name: libzip
         buildsystem: cmake-ninja
         config-opts:
