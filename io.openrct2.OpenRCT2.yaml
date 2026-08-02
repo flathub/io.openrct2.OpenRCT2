@@ -1,6 +1,6 @@
 app-id: io.openrct2.OpenRCT2
 runtime: org.freedesktop.Platform
-runtime-version: "24.08"
+runtime-version: '24.08'
 sdk: org.freedesktop.Sdk
 command: openrct2
 rename-appdata-file: io.openrct2.openrct2.appdata.xml
@@ -29,19 +29,27 @@ finish-args:
   - --filesystem=~/.local/share/Steam/steamapps/common/RollerCoaster Tycoon Classic:ro
   # Access to host Wine-installed RCT and RCT2 for auto-detection in OpenRCT2
   - --filesystem=~/.wine/drive_c/GOG Games/RollerCoaster Tycoon Deluxe:ro
-  - --filesystem=~/.wine/drive_c/Program Files/GalaxyClient/Games/RollerCoaster Tycoon Deluxe:ro
-  - --filesystem=~/.wine/drive_c/Program Files (x86)/GalaxyClient/Games/RollerCoaster Tycoon Deluxe:ro
+  - --filesystem=~/.wine/drive_c/Program Files/GalaxyClient/Games/RollerCoaster Tycoon
+    Deluxe:ro
+  - --filesystem=~/.wine/drive_c/Program Files (x86)/GalaxyClient/Games/RollerCoaster
+    Tycoon Deluxe:ro
   - --filesystem=~/.wine/drive_c/Program Files/Hasbro Interactive/RollerCoaster Tycoon:ro
-  - --filesystem=~/.wine/drive_c/Program Files (x86)/Hasbro Interactive/RollerCoaster Tycoon:ro
+  - --filesystem=~/.wine/drive_c/Program Files (x86)/Hasbro Interactive/RollerCoaster
+    Tycoon:ro
   - --filesystem=~/.wine/drive_c/GOG Games/RollerCoaster Tycoon 2 Triple Thrill Pack:ro
-  - --filesystem=~/.wine/drive_c/Program Files/GalaxyClient/Games/RollerCoaster Tycoon 2 Triple Thrill Pack:ro
-  - --filesystem=~/.wine/drive_c/Program Files (x86)/GalaxyClient/Games/RollerCoaster Tycoon 2 Triple Thrill Pack:ro
+  - --filesystem=~/.wine/drive_c/Program Files/GalaxyClient/Games/RollerCoaster Tycoon
+    2 Triple Thrill Pack:ro
+  - --filesystem=~/.wine/drive_c/Program Files (x86)/GalaxyClient/Games/RollerCoaster
+    Tycoon 2 Triple Thrill Pack:ro
   - --filesystem=~/.wine/drive_c/Program Files/Atari/RollerCoaster Tycoon 2:ro
   - --filesystem=~/.wine/drive_c/Program Files (x86)/Atari/RollerCoaster Tycoon 2:ro
   - --filesystem=~/.wine/drive_c/Program Files/Infogrames/RollerCoaster Tycoon 2:ro
-  - --filesystem=~/.wine/drive_c/Program Files (x86)/Infogrames/RollerCoaster Tycoon 2:ro
-  - --filesystem=~/.wine/drive_c/Program Files/Infogrames Interactive/RollerCoaster Tycoon 2:ro
-  - --filesystem=~/.wine/drive_c/Program Files (x86)/Infogrames Interactive/RollerCoaster Tycoon 2:ro
+  - --filesystem=~/.wine/drive_c/Program Files (x86)/Infogrames/RollerCoaster Tycoon
+    2:ro
+  - --filesystem=~/.wine/drive_c/Program Files/Infogrames Interactive/RollerCoaster
+    Tycoon 2:ro
+  - --filesystem=~/.wine/drive_c/Program Files (x86)/Infogrames Interactive/RollerCoaster
+    Tycoon 2:ro
 
 modules:
   - name: innoextract
@@ -51,7 +59,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/dscharrer/innoextract.git
-        tag: "1.9"
+        tag: '1.9'
         commit: 81fd9b95b76ee5115ce116bfdbc3bc6b887b809d
         x-checker-data:
           type: git
@@ -90,8 +98,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/OpenRCT2/OpenRCT2.git
-        tag: v0.5.3
-        commit: f503f57bdb74b31507f83909db587a5db5794ef0
+        tag: v0.5.4
+        commit: 4a7ee146caab8888eb31e56a33c0559db89b17bd
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
@@ -107,10 +115,10 @@ modules:
           version-query: .tag_name | sub("^v"; "")
           url-query: .assets[] | select(.name=="title-sequences.zip") | .browser_download_url
       - type: archive
-        url: https://github.com/OpenRCT2/objects/releases/download/v1.7.10/objects.zip
+        url: https://github.com/OpenRCT2/objects/releases/download/v1.7.11/objects.zip
         dest: data/object
         strip-components: 0
-        sha256: f483be266dc22077ba8517bbf32ffe388c3543b2ee585e0afbd4102db4528021
+        sha256: 74e73bbd012339511bb359dd0fbb148fda899790ae37d7d69861d88183b19452
         x-checker-data:
           type: json
           url: https://api.github.com/repos/OpenRCT2/objects/releases/latest
@@ -229,5 +237,5 @@ cleanup:
   - /share/man
   - /share/cmake
   - /share/pkgconfig
-  - "*.a"
-  - "*.la"
+  - '*.a'
+  - '*.la'
