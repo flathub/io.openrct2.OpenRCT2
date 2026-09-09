@@ -27,6 +27,10 @@ finish-args:
   - --filesystem=~/.local/share/Steam/steamapps/common/RollerCoaster Tycoon Deluxe:ro
   - --filesystem=~/.local/share/Steam/steamapps/common/Rollercoaster Tycoon 2:ro
   - --filesystem=~/.local/share/Steam/steamapps/common/RollerCoaster Tycoon Classic:ro
+  # Access to host Flatpak Steam-installed RCT and RCT2 for auto-detection in OpenRCT2
+  - --filesystem=~/.var/app/com.valvesoftware.Steam/.local/share/Steam/steamapps/common/RollerCoaster Tycoon Deluxe:ro
+  - --filesystem=~/.var/app/com.valvesoftware.Steam/.local/share/Steam/steamapps/common/Rollercoaster Tycoon 2:ro
+  - --filesystem=~/.var/app/com.valvesoftware.Steam/.local/share/Steam/steamapps/common/RollerCoaster Tycoon Classic:ro
   # Access to host Wine-installed RCT and RCT2 for auto-detection in OpenRCT2
   - --filesystem=~/.wine/drive_c/GOG Games/RollerCoaster Tycoon Deluxe:ro
   - --filesystem=~/.wine/drive_c/Program Files/GalaxyClient/Games/RollerCoaster Tycoon
