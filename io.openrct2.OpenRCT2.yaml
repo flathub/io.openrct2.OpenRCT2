@@ -1,6 +1,6 @@
 app-id: io.openrct2.OpenRCT2
 runtime: org.freedesktop.Platform
-runtime-version: '24.08'
+runtime-version: "26.08"
 sdk: org.freedesktop.Sdk
 command: openrct2
 rename-appdata-file: io.openrct2.openrct2.appdata.xml
@@ -60,10 +60,13 @@ modules:
     buildsystem: cmake-ninja
     config-opts:
       - -DCMAKE_BUILD_TYPE=Release
+    build-options:
+      env:
+        CMAKE_POLICY_VERSION_MINIMUM: "3.5"
     sources:
       - type: git
         url: https://github.com/dscharrer/innoextract.git
-        tag: '1.9'
+        tag: "1.9"
         commit: 81fd9b95b76ee5115ce116bfdbc3bc6b887b809d
         x-checker-data:
           type: git
@@ -96,7 +99,6 @@ modules:
       - -DCMAKE_BUILD_TYPE=Release
       - -DDOWNLOAD_OBJECTS=OFF
       - -DDOWNLOAD_OPENSFX=OFF
-      - -DDOWNLOAD_OPENMSX=OFF
       - -DDOWNLOAD_TITLE_SEQUENCES=OFF
       - -DDISABLE_VERSION_CHECKER=ON
     sources:
@@ -190,6 +192,7 @@ modules:
         buildsystem: cmake-ninja
         config-opts:
           - -DCMAKE_BUILD_TYPE=Release
+          - -DCMAKE_POLICY_VERSION_MINIMUM=3.5
           - -DBUILD_EXAMPLES=OFF
           - -DBUILD_SHARED_LIBS=ON
         sources:
@@ -205,6 +208,7 @@ modules:
             buildsystem: cmake-ninja
             config-opts:
               - -DCMAKE_BUILD_TYPE=Release
+              - -DCMAKE_POLICY_VERSION_MINIMUM=3.5
               - -DRAPIDJSON_BUILD_DOC=OFF
               - -DRAPIDJSON_BUILD_EXAMPLES=OFF
               - -DRAPIDJSON_BUILD_TESTS=OFF
@@ -241,5 +245,5 @@ cleanup:
   - /share/man
   - /share/cmake
   - /share/pkgconfig
-  - '*.a'
-  - '*.la'
+  - "*.a"
+  - "*.la"
