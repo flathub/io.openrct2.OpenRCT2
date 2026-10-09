@@ -1,6 +1,6 @@
 app-id: io.openrct2.OpenRCT2
 runtime: org.freedesktop.Platform
-runtime-version: '24.08'
+runtime-version: '26.08'
 sdk: org.freedesktop.Sdk
 command: openrct2
 rename-appdata-file: io.openrct2.openrct2.appdata.xml
@@ -63,14 +63,10 @@ modules:
     sources:
       - type: git
         url: https://github.com/dscharrer/innoextract.git
-        tag: '1.9'
-        commit: 81fd9b95b76ee5115ce116bfdbc3bc6b887b809d
+        commit: 6e9e34ed0876014fdb46e684103ef8c3605e382e
         x-checker-data:
           type: git
           tag-pattern: ^([\d.]+)$
-      # See https://github.com/dscharrer/innoextract/commit/264c2fe6b84f90f6290c670e5f676660ec7b2387
-      - type: patch
-        path: patches/innoextract/264c2fe6b84f90f6290c670e5f676660ec7b2387.patch
     modules:
       - name: boost
         buildsystem: simple
@@ -192,11 +188,11 @@ modules:
           - -DCMAKE_BUILD_TYPE=Release
           - -DBUILD_EXAMPLES=OFF
           - -DBUILD_SHARED_LIBS=ON
+          - -DCMAKE_POLICY_VERSION_MINIMUM=3.5
         sources:
           - type: git
             url: https://github.com/discord/discord-rpc.git
-            tag: v3.4.0
-            commit: e6390c8c4190b59f1cc98bcec688e0037b84974d
+            commit: 963aa9f3e5ce81a4682c6ca3d136cddda614db33
             x-checker-data:
               type: git
               tag-pattern: ^v([\d.]+)$
@@ -211,16 +207,11 @@ modules:
             sources:
               - type: git
                 url: https://github.com/Tencent/rapidjson.git
-                tag: v1.1.0
-                commit: f54b0e47a08782a6131cc3d60f94d038fa6e0a51
+                commit: 24b5e7a8b27f42fa16b96fc70aade9106cf7102f
                 disable-submodules: true
                 x-checker-data:
                   type: git
                   tag-pattern: ^v([\d.]+)$
-              - type: patch
-                paths:
-                  - patches/rapidjson/3b2441b87f99ab65f37b141a7b548ebadb607b96.patch
-                  - patches/rapidjson/862c39be371278a45a88d4d1d75164be57bb7e2d.patch
             cleanup:
               - /share/doc
 
