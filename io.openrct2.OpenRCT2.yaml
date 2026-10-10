@@ -104,27 +104,27 @@ modules:
     sources:
       - type: git
         url: https://github.com/OpenRCT2/OpenRCT2.git
-        tag: v0.5.5
-        commit: 8694e3483690323b6a75fa7264b6c58116f51f31
+        tag: v0.5.6
+        commit: 82b309798a83346b7f9fc61a53847f4323deb19d
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
           is-main-source: true
       - type: archive
-        url: https://github.com/OpenRCT2/title-sequences/releases/download/v0.4.26/title-sequences.zip
+        url: https://github.com/OpenRCT2/title-sequences/releases/download/v0.5.6/title-sequences.zip
         dest: data/sequence
         strip-components: 0
-        sha256: dabb9787b1576342fca4dd9f64b3f8cfa04a7e6ce9c2bb9610f47b762905c858
+        sha256: 37ac28985baf183bae27af72710613595f683dc24892c05989fb6bfd016bdb5d
         x-checker-data:
           type: json
           url: https://api.github.com/repos/OpenRCT2/title-sequences/releases/latest
           version-query: .tag_name | sub("^v"; "")
           url-query: .assets[] | select(.name=="title-sequences.zip") | .browser_download_url
       - type: archive
-        url: https://github.com/OpenRCT2/objects/releases/download/v1.7.11/objects.zip
+        url: https://github.com/OpenRCT2/objects/releases/download/v1.8.0/objects.zip
         dest: data/object
         strip-components: 0
-        sha256: 74e73bbd012339511bb359dd0fbb148fda899790ae37d7d69861d88183b19452
+        sha256: 949bee5cac9e941be63bb923b792738a507c155a6fea73edab0b23bede21d302
         x-checker-data:
           type: json
           url: https://api.github.com/repos/OpenRCT2/objects/releases/latest
