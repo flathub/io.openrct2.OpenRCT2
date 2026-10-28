@@ -17,8 +17,6 @@ finish-args:
   - --socket=pulseaudio
   # Network access - for multiplayer
   - --share=network
-  # OpenGL access
-  - --device=dri
   # Required for gamepad access, replace with "input" when allowed by Flathub
   - --device=all
   # Discord RPC
