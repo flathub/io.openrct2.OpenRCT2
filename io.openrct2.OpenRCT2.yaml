@@ -1,6 +1,6 @@
 app-id: io.openrct2.OpenRCT2
 runtime: org.freedesktop.Platform
-runtime-version: "26.08"
+runtime-version: '26.08'
 sdk: org.freedesktop.Sdk
 command: openrct2
 rename-appdata-file: io.openrct2.openrct2.appdata.xml
@@ -26,9 +26,12 @@ finish-args:
   - --filesystem=~/.local/share/Steam/steamapps/common/Rollercoaster Tycoon 2:ro
   - --filesystem=~/.local/share/Steam/steamapps/common/RollerCoaster Tycoon Classic:ro
   # Access to host Flatpak Steam-installed RCT and RCT2 for auto-detection in OpenRCT2
-  - --filesystem=~/.var/app/com.valvesoftware.Steam/.local/share/Steam/steamapps/common/RollerCoaster Tycoon Deluxe:ro
-  - --filesystem=~/.var/app/com.valvesoftware.Steam/.local/share/Steam/steamapps/common/Rollercoaster Tycoon 2:ro
-  - --filesystem=~/.var/app/com.valvesoftware.Steam/.local/share/Steam/steamapps/common/RollerCoaster Tycoon Classic:ro
+  - --filesystem=~/.var/app/com.valvesoftware.Steam/.local/share/Steam/steamapps/common/RollerCoaster
+    Tycoon Deluxe:ro
+  - --filesystem=~/.var/app/com.valvesoftware.Steam/.local/share/Steam/steamapps/common/Rollercoaster
+    Tycoon 2:ro
+  - --filesystem=~/.var/app/com.valvesoftware.Steam/.local/share/Steam/steamapps/common/RollerCoaster
+    Tycoon Classic:ro
   # Access to host Wine-installed RCT and RCT2 for auto-detection in OpenRCT2
   - --filesystem=~/.wine/drive_c/GOG Games/RollerCoaster Tycoon Deluxe:ro
   - --filesystem=~/.wine/drive_c/Program Files/GalaxyClient/Games/RollerCoaster Tycoon
@@ -60,11 +63,11 @@ modules:
       - -DCMAKE_BUILD_TYPE=Release
     build-options:
       env:
-        CMAKE_POLICY_VERSION_MINIMUM: "3.5"
+        CMAKE_POLICY_VERSION_MINIMUM: '3.5'
     sources:
       - type: git
         url: https://github.com/dscharrer/innoextract.git
-        tag: "1.9"
+        tag: '1.9'
         commit: 81fd9b95b76ee5115ce116bfdbc3bc6b887b809d
         x-checker-data:
           type: git
@@ -86,7 +89,8 @@ modules:
               type: html
               url: https://www.boost.org/feed/downloads.rss
               version-pattern: <link>https://www.boost.org/users/history/version_([\d_]+).html</link>
-              url-template: https://archives.boost.io/release/$version0.$version2.$version4/source/boost_$version.tar.bz2
+              url-template: 
+                https://archives.boost.io/release/$version0.$version2.$version4/source/boost_$version.tar.bz2
 
   - name: OpenRCT2
     buildsystem: cmake-ninja
@@ -102,14 +106,15 @@ modules:
     sources:
       - type: git
         url: https://github.com/OpenRCT2/OpenRCT2.git
-        tag: v0.5.6
-        commit: 82b309798a83346b7f9fc61a53847f4323deb19d
+        tag: v0.5.7
+        commit: 44472e4ff821fa15711624b7fceb87cb9260c8d6
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
           is-main-source: true
       - type: archive
-        url: https://github.com/OpenRCT2/title-sequences/releases/download/v0.5.6/title-sequences.zip
+        url: 
+          https://github.com/OpenRCT2/title-sequences/releases/download/v0.5.6/title-sequences.zip
         dest: data/sequence
         strip-components: 0
         sha256: 37ac28985baf183bae27af72710613595f683dc24892c05989fb6bfd016bdb5d
@@ -129,7 +134,8 @@ modules:
           version-query: .tag_name | sub("^v"; "")
           url-query: .assets[] | select(.name=="objects.zip") | .browser_download_url
       - type: archive
-        url: https://github.com/OpenRCT2/OpenSoundEffects/releases/download/v1.0.6/opensound.zip
+        url: 
+          https://github.com/OpenRCT2/OpenSoundEffects/releases/download/v1.0.6/opensound.zip
         dest: data
         strip-components: 0
         sha256: 06b90f3e19c216752df441d551b26a9e3e1ba7755bdd2102504b73bf993608be
@@ -164,8 +170,8 @@ modules:
         sources:
           - type: git
             url: https://github.com/nih-at/libzip.git
-            tag: v1.11.4
-            commit: 6f8a0cdd24a0dc6cce9dac4a7679da784ab124ea
+            tag: v1.12.1
+            commit: 8e037534ccd62f444abbe4ce265443ee74bbfeb3
             x-checker-data:
               type: git
               tag-pattern: ^v([\d.]+)$
@@ -258,5 +264,5 @@ cleanup:
   - /share/man
   - /share/cmake
   - /share/pkgconfig
-  - "*.a"
-  - "*.la"
+  - '*.a'
+  - '*.la'
